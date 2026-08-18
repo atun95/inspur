@@ -1,0 +1,38 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "category": "Thiết bị hiển thị",
+      "vi": {
+        "title": "Màn hình Inspur",
+        "desc": "Màn hình Inspur mang đến chất lượng hiển thị sắc nét, hiệu năng ổn định.",
+        "technicalSpecs": ["Độ phân giải: 1920 × 1080 (Full HD)", "Công nghệ DCR, lọc ánh sáng xanh", "Tấm nền: IPS (BOE)"]
+      },
+      "en": {
+        "title": "Inspur Monitor",
+        "desc": "Inspur monitors deliver sharp display quality and stable performance.",
+        "technicalSpecs": ["Resolution: 1920 × 1080 (Full HD)", "DCR technology, blue light filter", "IPS Panel (BOE)"]
+      },
+      "img": "./images/IIP270AF.png",
+      "icon": "Monitor",
+      "url": "https://inspur.com.vn/san-pham/man-hinh-inspur/"
+    },
+    {
+      "id": 2,
+      "category": "Máy tính All-in-one",
+      "vi": {
+        "title": "Máy tính All-in-one Inspur",
+        "desc": "Giải pháp máy tính All-in-one hiện đại, tích hợp màn hình và CPU trong một thiết bị gọn nhẹ.",
+        "technicalSpecs": ["Thiết kế All-in-one tiện lợi", "Hiệu năng mạnh mẽ, tiết kiệm không gian", "Phù hợp văn phòng và gia đình"]
+      },
+      "en": {
+        "title": "Inspur All-in-one PC",
+        "desc": "Modern All-in-one PC solution, integrating display and CPU in a compact device.",
+        "technicalSpecs": ["Convenient All-in-one design", "Powerful performance, space-saving", "Suitable for office and home"]
+      },
+      "img": "./images/UT238.png",
+      "icon": "LaptopIcon",
+      "url": "https://inspur.com.vn/san-pham/may-tinh-all-in-one/"
+    }
+  ]
+}

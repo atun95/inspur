@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gala sự kiện cuối năm - Giải Pickleball CCTV-IT Lâm Đồng gây qũy từ thiện">
+    <title>Gala Sự Kiện Cuối Năm - Inspur Vietnam</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: #f8fafc;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: #0056b3;
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 40px;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+        .back-btn {
+            background: white;
+            color: #0056b3;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .back-btn:hover {
+            background: #f1f5f9;
+        }
+        .article {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        .article-header {
+            margin-bottom: 30px;
+        }
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #64748b;
+            flex-wrap: wrap;
+        }
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .article-title {
+            font-size: 36px;
+            font-weight: 900;
+            color: #0f172a;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .article-content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+        }
+        .article-content h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #0056b3;
+            margin: 40px 0 20px 0;
+        }
+        .article-content h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 25px 0 12px 0;
+        }
+        .article-content p {
+            margin-bottom: 20px;
+        }
+        .article-content ul, .article-content ol {
+            margin: 20px 0 20px 30px;
+        }
+        .article-content li {
+            margin-bottom: 10px;
+        }
+        .highlight-box {
+            background: #f1f5f9;
+            border-left: 4px solid #0056b3;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        /* Image Gallery Styles */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-item.large {
+            grid-column: span 2;
+        }
+        .gallery-item.tall {
+            grid-row: span 2;
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            padding: 15px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        /* Featured Image */
+        .featured-image {
+            width: 100%;
+            max-height: 600px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
+        /* Award Section */
+        .award-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 40px;
+            border-radius: 16px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .award-image {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .two-column img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .tags {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: #e2e8f0;
+            color: #475569;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        @media (max-width: 768px) {
+            .article {
+                padding: 20px;
+            }
+            .article-title {
+                font-size: 28px;
+            }
+            .article-content h2 {
+                font-size: 24px;
+            }
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+            .gallery-item.large,
+            .gallery-item.tall {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            .award-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">INSPUR</div>
+            <a href="javascript:history.back()" class="back-btn">← Quay lại</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <article class="article">
+            <div class="article-header">
+                <div class="article-meta">
+                    <span>📅 20/12/2025</span>
+                    <span>⏱️ 4 phút đọc</span>
+                    <span>🏷️ Sự kiện</span>
+                </div>
+                <h1 class="article-title">Gala Tất Niên Cuối Năm - Giải Pickleball CCTV-IT Lâm Đồng Gây Qũy Từ Thiện</h1>
+            </div>
+
+            <!-- Featured Image - Banner Event -->
+            <img src="./images/pickleball.jpg" alt="Banner giải Pickleball CCTV-IT Lâm Đồng" class="featured-image" onerror="this.style.display='none'">
+
+            <div class="article-content">
+                <p>
+                    Vào ngày 20 tháng 12 năm 2025, <strong>Hội CCTV-IT Lâm Đồng</strong> đã tổ chức thành công 
+                    <strong>Gala Tất Niên Cuối Năm</strong> kết hợp với <strong>Giải Pickleball CCTV-IT Lâm Đồng</strong> 
+                    nhằm gây qũy từ thiện, mang lại niềm vui và hỗ trợ cho cộng đồng địa phương. 
+                    <strong>Inspur DSS</strong> vinh dự là <strong>Nhà Tài Trợ Kim Cương</strong> cho sự kiện ý nghĩa này.
+                </p>
+
+                <!-- Award Section -->
+                <div class="award-section">
+                    <h2 style="margin-top: 0; color: #0056b3;">Vinh Dự Nhà Tài Trợ Kim Cương</h2>
+                    <p style="margin-bottom: 20px;">
+                        Inspur DSS tự hào được công nhận là <strong>Nhà Tài Trợ Kim Cương</strong> cho sự kiện Gala Tất Niên 
+                        Cộng Đồng IT CCTV Lâm Đồng 2025. Giải thưởng này thể hiện sự đóng góp tích cực của Inspur trong việc 
+                        hỗ trợ các hoạt động cộng đồng và phát triển ngành công nghệ thông tin tại địa phương.
+                    </p>
+                    <img src="./images/award-crystal.jpg" alt="Giải thưởng Nhà Tài Trợ Kim Cương" class="award-image" onerror="this.style.display='none'">
+                </div>
+
+                <h2>Giới Thiệu Sự Kiện</h2>
+                <p>
+                    Sự kiện được tổ chức tại Lâm Đồng với chủ đề <strong>"Đoàn Kết - Sức Mạnh - Lan Tỏa Yêu Thương"</strong>, 
+                    thu hút sự tham gia của đông đảo các doanh nghiệp, đối tác và cộng đồng yêu thích thể thao. 
+                    Giải đấu Pickleball không chỉ là một hoạt động thể thao mà còn là cơ hội để các thành viên gắn kết, 
+                    chia sẻ và cùng nhau đóng góp cho các hoạt động từ thiện.
+                </p>
+
+                <div class="highlight-box">
+                    <strong>Mục tiêu:</strong> Gây qũy từ thiện hỗ trợ các hoạt động giáo dục và phúc lợi xã hội tại Lâm Đồng, 
+                    đồng thời tăng cường tinh thần đoàn kết trong cộng đồng IT CCTV.
+                </div>
+
+                <h2>Phần 1: Giải Đấu Pickleball</h2>
+                <p>
+                    Giải đấu Pickleball được tổ chức với nhiều hạng mục thi đấu hấp dẫn, thu hút các vận động viên từ nhiều 
+                    độ tuổi và trình độ khác nhau. Không khí thi đấu sôi động, đầy tinh thần thể thao và sự gắn kết.
+                </p>
+
+                <!-- Pickleball Images -->
+                <div class="two-column">
+                    <div>
+                        <img src="./images/pickleball1.jpg" alt="Trận đấu Pickleball" onerror="this.style.display='none'">
+                        <p style="margin-top: 10px; font-size: 14px; color: #64748b; text-align: center;">
+                            Các vận động viên trong trận đấu
+                        </p>
+                    </div>
+                    <div>
+                        <img src="./images/pickleball2.jpg" alt="Đội tuyển Pickleball" onerror="this.style.display='none'">
+                        <p style="margin-top: 10px; font-size: 14px; color: #64748b; text-align: center;">
+                            Đội tuyển tham gia giải đấu
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Các Hạng Mục Thi Đấu</h3>
+                <ul>
+                    <li>Đơn nam và đơn nữ</li>
+                    <li>Đôi nam nữ</li>
+                    <li>Đôi đồng đội</li>
+                    <li>Hạng mục dành cho người cao tuổi</li>
+                </ul>
+
+                <h2>Phần 2: Gala Tất Niên</h2>
+                <p>
+                    Buổi gala tối diễn ra trong không khí trang trọng và ấm cúng với sự tham gia của hơn 200 khách mời, 
+                    bao gồm các đại diện doanh nghiệp, đối tác và thành viên cộng đồng IT CCTV Lâm Đồng.
+                </p>
+
+                <!-- Stage Image -->
+                <img src="./images/CCTV IT Lâm Đồng 2.jpg" alt="Sân khấu Gala Tất Niên" class="featured-image" style="max-height: 500px;" onerror="this.style.display='none'">
+                <p style="text-align: center; font-size: 14px; color: #64748b; margin-top: 10px;">
+                    Sân khấu chính của Gala với màn hình LED hiển thị thông tin sự kiện và các nhà tài trợ
+                </p>
+
+                <h3>Chương Trình Gala</h3>
+                <ul>
+                    <li>Phát biểu khai mạc và giới thiệu các nhà tài trợ</li>
+                    <li>Trao giải thưởng cho các vận động viên xuất sắc</li>
+                    <li>Chương trình văn nghệ đặc sắc</li>
+                    <li>Đấu giá từ thiện các vật phẩm có ý nghĩa</li>
+                    <li>Giao lưu giữa các đối tác và khách mời</li>
+                    <li>Tiệc tất niên với không khí ấm cúng</li>
+                </ul>
+
+                <!-- Award Ceremony Image -->
+                <div style="margin: 30px 0;">
+                    <img src="./images/CCTV IT Lâm Đồng 4.jpg" alt="Lễ trao giải" class="featured-image" style="max-height: 500px;" onerror="this.style.display='none'">
+                    <p style="text-align: center; font-size: 14px; color: #64748b; margin-top: 10px;">
+                        Lễ trao giải cho các vận động viên và nhà tài trợ xuất sắc
+                    </p>
+                </div>
+
+                <!-- Celebration Image -->
+                <div style="margin: 30px 0;">
+                    <img src="./images/CCTV IT Lâm Đồng 3.jpg" alt="Tiệc tất niên" class="featured-image" style="max-height: 500px;" onerror="this.style.display='none'">
+                    <p style="text-align: center; font-size: 14px; color: #64748b; margin-top: 10px;">
+                        Không khí vui vẻ tại bữa tiệc tất niên với sự tham gia của đông đảo thành viên
+                    </p>
+                </div>
+
+                <h2>Kết Quả Đạt Được</h2>
+                <p>
+                    Sự kiện đã thu hút hơn <strong>200 người tham gia</strong> và quyên góp được số tiền đáng kể 
+                    để hỗ trợ các hoạt động từ thiện tại địa phương. Ngoài ra, sự kiện còn tạo cơ hội để:
+                </p>
+                <ul>
+                    <li>Tăng cường mối quan hệ hợp tác giữa các doanh nghiệp trong ngành IT CCTV</li>
+                    <li>Nâng cao tinh thần thể thao và sức khỏe cộng đồng</li>
+                    <li>Góp phần vào các hoạt động xã hội có ý nghĩa</li>
+                    <li>Lan tỏa tinh thần đoàn kết và yêu thương trong cộng đồng</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>Các Nhà Tài Trợ:</strong><br>
+                    <strong>Tài Trợ Kim Cương:</strong> Inspur DSS, Dahua DSS, STAR TINHOCNGOISAO.COM<br>
+                    <strong>Tài Trợ Vàng:</strong> Ruijie Reyee, HIKVISION, Tiandy NEW, asustor, DrayTek, JOVISION, 
+                    Link, IMA COT, Thegioipc.vn, ViewSonic và nhiều đối tác khác.
+                </div>
+
+                <h2>Lời Cảm Ơn</h2>
+                <p>
+                    Inspur DSS xin chân thành cảm ơn <strong>Hội CCTV-IT Lâm Đồng</strong> đã tổ chức sự kiện ý nghĩa này, 
+                    tất cả các đối tác, khách mời và người tham gia đã đóng góp vào thành công của sự kiện. 
+                    Chúng tôi cam kết sẽ tiếp tục đồng hành và hỗ trợ các hoạt động cộng đồng tương tự trong tương lai 
+                    để góp phần xây dựng cộng đồng IT CCTV ngày càng phát triển và gắn kết hơn.
+                </p>
+
+                <div class="highlight-box">
+                    <strong>Thông tin liên hệ:</strong><br>
+                    Để biết thêm chi tiết về các sự kiện sắp tới, vui lòng liên hệ:<br>
+                    Email: admin@inspur.com.vn<br>
+                    Hotline: 0377 211 797<br>
+                    Website: <a href="https://inspur.com.vn" style="color: #0056b3;">inspur.com.vn</a>
+                </div>
+
+                <div class="tags">
+                    <span class="tag">#SựKiện</span>
+                    <span class="tag">#TừThiện</span>
+                    <span class="tag">#Pickleball</span>
+                    <span class="tag">#InspurDSS</span>
+                    <span class="tag">#CCTVITLâmĐồng</span>
+                    <span class="tag">#GalaTấtNiên</span>
+                    <span class="tag">#CộngĐồng</span>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 INSPUR VIETNAM GROUP. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+</body>
+</html>
