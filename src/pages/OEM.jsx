@@ -348,9 +348,9 @@ const App = () => {
     }
 
     // Favicon
-    updateLink('icon', '/favicon.svg', 'image/svg+xml');
-    updateLink('shortcut icon', '/favicon.svg', 'image/svg+xml');
-    updateLink('apple-touch-icon', '/favicon.svg');
+    updateLink('icon', '/favicon.ico', 'image/x-icon');
+    updateLink('shortcut icon', '/favicon.ico', 'image/x-icon');
+    updateLink('apple-touch-icon', '/favicon.ico');
 
     // Canonical URL
     updateLink('canonical', window.location.href);
@@ -855,9 +855,9 @@ const App = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-950 text-white pt-24 pb-12 border-t border-white/5">
+      <footer className="bg-slate-950 text-white pt-12 pb-6 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 mb-10">
             <div className="space-y-8 text-center md:text-left">
               <span className="font-black text-4xl tracking-tighter italic uppercase text-white">INSPUR</span>
               <p className="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto md:mx-0">{t.footerDesc}</p>
@@ -909,8 +909,8 @@ const App = () => {
             </div>
           </div>
 
-          <div className="pt-12 border-t border-white/5 flex justify-center items-center">
-            <p className="text-slate-600 text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-center">{t.footerCopy}</p>
+          <div className="pt-6 border-t border-white/5 flex justify-center items-center">
+            <p className="text-slate-600 text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-center">© 2025 INSPUR VIETNAM</p>
           </div>
         </div>
       </footer>

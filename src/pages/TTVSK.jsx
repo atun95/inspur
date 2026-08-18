@@ -234,9 +234,9 @@ const App = () => {
     
     // Thiết lập favicon
     let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-    link.type = 'image/svg+xml';
+    link.type = 'image/x-icon';
     link.rel = 'shortcut icon';
-    link.href = '/favicon.svg';
+    link.href = '/favicon.ico';
     document.getElementsByTagName('head')[0].appendChild(link);
   }, [t.seo.title]);
 
@@ -462,9 +462,9 @@ const App = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-slate-950 text-white pt-24 pb-12">
+      <footer className="bg-slate-950 text-white pt-12 pb-6">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20 text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10 text-left">
             <div className="space-y-8">
               <TextLogo light={true} />
               <p className="text-slate-400 text-sm leading-relaxed font-medium">Đối tác hạ tầng CNTT toàn cầu, dẫn đầu kỷ nguyên AI và Cloud Computing tại Việt Nam.</p>

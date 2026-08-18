@@ -48,17 +48,17 @@ const SafeImage = ({ src, alt, className }) => {
 // Icon Zalo SVG - Logo Zalo (chữ Z màu trắng trong vòng tròn xanh)
 const ZaloIcon = ({ className = "w-6 h-6" }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="12" cy="12" r="11" fill="currentColor"/>
-    <path d="M8.5 9.5h5.5M8.5 12h4.5M8.5 14.5h5.5" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M8.5 9.5l4.5 3-4.5 3" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="12" cy="12" r="11" fill="currentColor" />
+    <path d="M8.5 9.5h5.5M8.5 12h4.5M8.5 14.5h5.5" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M8.5 9.5l4.5 3-4.5 3" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 // Icon Messenger SVG - Logo Messenger (bong bóng chat với tia chớp)
 const MessengerIcon = ({ className = "w-6 h-6" }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 0C5.373 0 0 4.925 0 11c0 2.153.74 4.137 1.97 5.709L0 24l7.733-2.074c1.051.29 2.162.449 3.267.449 6.627 0 12-4.925 12-11S18.627 0 12 0z"/>
-    <path d="M7 9l5 5 7-9H9l-2 4z" fill="white"/>
+    <path d="M12 0C5.373 0 0 4.925 0 11c0 2.153.74 4.137 1.97 5.709L0 24l7.733-2.074c1.051.29 2.162.449 3.267.449 6.627 0 12-4.925 12-11S18.627 0 12 0z" />
+    <path d="M7 9l5 5 7-9H9l-2 4z" fill="white" />
   </svg>
 );
 
@@ -85,7 +85,7 @@ export const TRANSLATIONS = {
     heroDesc: "Inspur dẫn dắt kỷ nguyên AI thông qua sức mạnh tính toán vượt trội, cung cấp hạ tầng vững chắc cho chuyển đổi số toàn cầu.",
     heroBtnPrimary: "Khám phá năng lực",
     heroBtnSecondary: "Tìm hiểu tập đoàn",
-    
+
     sectorsTitle: "Lĩnh Vực Hoạt Động Cốt Lõi",
     sectorsTag: "Hệ sinh thái cốt lõi",
     sectors: [
@@ -170,7 +170,7 @@ export const TRANSLATIONS = {
     footerQuote: "Yêu cầu báo giá",
     footerDesc: 'Inspur Việt Nam - Đại diện chính thức cung cấp giải pháp công nghệ toàn diện từ tập đoàn Inspur.',
     footerAddress: '68 Ký Hoà, Phường Chợ Lớn , TP.HCM',
-    footerCopy: '© 2025 INSPUR VIETNAM GROUP.'
+    footerCopy: '© 2025 INSPUR VIETNAM.'
   },
   en: {
     seo: {
@@ -179,7 +179,7 @@ export const TRANSLATIONS = {
       keywords: "Inspur Vietnam, Inspur server, Cloud solutions, digital infrastructure, data center, AI server, smart devices",
     },
     nav: [
-      { name: 'About us', url: '/gioi-thieu/'},
+      { name: 'About us', url: '/gioi-thieu/' },
       { name: 'Products', url: '/san-pham' },
       { name: 'Solutions', url: '/giai-phap' },
       { name: 'OEM', url: '/oem' },
@@ -293,10 +293,10 @@ const App = () => {
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
-    
+
     // Cập nhật tiêu đề trang ngay lập tức
     document.title = t.seo.title;
-    
+
     // Hàm cập nhật hoặc tạo mới thẻ meta
     const setMetaTag = (name, content, attr = 'name') => {
       let element = document.querySelector(`meta[${attr}="${name}"]`);
@@ -315,7 +315,7 @@ const App = () => {
       let selector = `link[rel="${rel}"]`;
       if (sizes) selector += `[sizes="${sizes}"]`;
       let element = document.querySelector(selector);
-      
+
       if (element) {
         element.setAttribute('href', href);
         if (sizes) element.setAttribute('sizes', sizes);
@@ -340,34 +340,34 @@ const App = () => {
     if (t.seo.keywords) {
       setMetaTag('keywords', t.seo.keywords);
     }
-    
+
     // Robots meta tag
     setMetaTag('robots', 'index, follow');
-    
+
     // Author meta tag
     setMetaTag('author', 'Inspur Vietnam');
-    
+
     // Tách riêng favicon và social sharing image
     // Favicon nên dùng ICO hoặc PNG với kích thước chuẩn để tránh bể hình trên taskbar
     const baseUrl = window.location.origin;
-    
+
     // Ưu tiên sử dụng favicon.ico (tốt nhất) hoặc favicon.png
     // Logo JPG chỉ dùng cho social sharing, không dùng cho favicon
     const faviconIco = baseUrl + '/favicon.ico';
     const faviconPng = baseUrl + '/favicon.png';
     const logoImageUrl = baseUrl + '/images/logo4.jpg';
-    
+
     // Xóa tất cả favicon cũ để tránh xung đột
     const removeOldFavicons = () => {
       const oldFavicons = document.querySelectorAll('link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"]');
       oldFavicons.forEach(link => link.remove());
     };
     removeOldFavicons();
-    
+
     // Sử dụng favicon.svg đồng nhất
-    setLinkTag('shortcut icon', '/favicon.svg', null, 'image/svg+xml', true);
-    setLinkTag('icon', '/favicon.svg', null, 'image/svg+xml', true);
-    
+    setLinkTag('shortcut icon', '/favicon.ico', null, 'image/x-icon', true);
+    setLinkTag('icon', '/favicon.ico', null, 'image/x-icon', true);
+
     // Thêm manifest icon cho PWA (nếu cần)
     const setManifestIcon = () => {
       let manifest = document.querySelector('link[rel="manifest"]');
@@ -375,7 +375,7 @@ const App = () => {
         // Manifest sẽ được xử lý riêng nếu có file manifest.json
       }
     };
-    
+
     // Canonical URL
     const setCanonical = (url) => {
       let element = document.querySelector('link[rel="canonical"]');
@@ -389,7 +389,7 @@ const App = () => {
       }
     };
     setCanonical(window.location.href);
-    
+
     // Open Graph tags - Tối ưu cho Zalo, Messenger, Facebook
     // Lưu ý: Ảnh OG image phải có kích thước thực tế là 1200x630 pixels (tỷ lệ 1.91:1)
     // Nếu ảnh không đúng kích thước, Zalo/Messenger sẽ tự động crop và có thể bị cắt mất hình
@@ -399,7 +399,7 @@ const App = () => {
     setMetaTag('og:url', window.location.href, 'property');
     setMetaTag('og:site_name', 'Inspur Vietnam', 'property');
     setMetaTag('og:locale', lang === 'vi' ? 'vi_VN' : 'en_US', 'property');
-    
+
     // OG Image - URL phải là absolute URL (đã có baseUrl)
     // Kích thước chuẩn: 1200x630 (1.91:1) - TỐI THIỂU cho Zalo/Messenger
     setMetaTag('og:image', logoImageUrl, 'property');
@@ -410,7 +410,7 @@ const App = () => {
     setMetaTag('og:image:height', '630', 'property');
     setMetaTag('og:image:type', 'image/jpeg', 'property');
     setMetaTag('og:image:alt', 'Inspur Vietnam Logo', 'property');
-    
+
     // Twitter Card tags
     setMetaTag('twitter:card', 'summary_large_image');
     setMetaTag('twitter:title', t.seo.title);
@@ -432,7 +432,7 @@ const App = () => {
   // ============================================
   // HÀM XỬ LÝ ZALO VÀ FACEBOOK MESSENGER
   // ============================================
-  
+
   // Hàm mở Zalo chat
   const openZaloChat = () => {
     window.open('https://zalo.me/0377211797', '_blank');
@@ -462,25 +462,23 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-[#0056b3] selection:text-white">
-      
+
       {/* Mobile Drawer Overlay */}
-      <div 
-        className={`fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-[150] transition-opacity duration-500 lg:hidden ${
-          isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
+      <div
+        className={`fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-[150] transition-opacity duration-500 lg:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
         onClick={() => setIsMenuOpen(false)}
       />
 
       {/* Mobile Drawer Content */}
-      <div className={`fixed top-0 right-0 w-[85%] max-w-sm h-full bg-white z-[200] transition-transform duration-500 ease-out lg:hidden shadow-2xl ${
-        isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}>
+      <div className={`fixed top-0 right-0 w-[85%] max-w-sm h-full bg-white z-[200] transition-transform duration-500 ease-out lg:hidden shadow-2xl ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}>
         <div className="flex flex-col h-full">
           <div className="p-6 flex items-center justify-between border-b border-slate-100">
-             <span className="font-black text-2xl tracking-tighter italic uppercase text-[#0056b3]">INSPUR</span>
-             <button onClick={() => setIsMenuOpen(false)} className="p-2 bg-slate-50 rounded-full text-slate-400">
-               <X size={24} />
-             </button>
+            <span className="font-black text-2xl tracking-tighter italic uppercase text-[#0056b3]">INSPUR</span>
+            <button onClick={() => setIsMenuOpen(false)} className="p-2 bg-slate-50 rounded-full text-slate-400">
+              <X size={24} />
+            </button>
           </div>
 
           <div className="flex-1 overflow-y-auto p-6 space-y-2">
@@ -532,14 +530,14 @@ const App = () => {
           </div>
 
           <div className="p-8 bg-slate-50 space-y-6">
-            <button 
+            <button
               onClick={toggleLang}
               className="w-full flex items-center justify-center gap-3 py-4 bg-white border border-slate-200 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-sm active:scale-95 transition-all"
             >
               <Languages size={16} className="text-[#0056b3]" />
               {lang === 'vi' ? 'Switch to English' : 'Dùng Tiếng Việt'}
             </button>
-            <button 
+            <button
               onClick={() => {
                 window.location.href = '/oem';
                 setIsMenuOpen(false);
@@ -558,9 +556,8 @@ const App = () => {
       </div>
 
       {/* Main Header */}
-      <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 shadow-sm' : 'bg-transparent py-6'
-      }`}>
+      <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 shadow-sm' : 'bg-transparent py-6'
+        }`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <div className="flex items-center gap-2 group cursor-pointer" onClick={() => window.location.href = '/'}>
             <img
@@ -581,26 +578,25 @@ const App = () => {
                 {item.sub && (
                   <div className="absolute top-full left-0 pt-4 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
                     <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 p-6 w-56 space-y-4">
-                       {item.sub.map(sub => (
-                         <a key={sub} href="#" className="block text-[11px] font-black uppercase tracking-widest text-slate-500 hover:text-[#0056b3] transition-colors">{sub}</a>
-                       ))}
+                      {item.sub.map(sub => (
+                        <a key={sub} href="#" className="block text-[11px] font-black uppercase tracking-widest text-slate-500 hover:text-[#0056b3] transition-colors">{sub}</a>
+                      ))}
                     </div>
                   </div>
                 )}
               </div>
             ))}
-            
-            <button 
+
+            <button
               onClick={toggleLang}
-              className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all text-[10px] font-black uppercase tracking-widest ${
-                isScrolled ? 'border-slate-200 text-slate-600 hover:bg-slate-50' : 'border-white/20 text-white hover:bg-white/10'
-              }`}
+              className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all text-[10px] font-black uppercase tracking-widest ${isScrolled ? 'border-slate-200 text-slate-600 hover:bg-slate-50' : 'border-white/20 text-white hover:bg-white/10'
+                }`}
             >
               <Languages size={14} />
               {lang === 'vi' ? 'English' : 'Tiếng Việt'}
             </button>
 
-            <button 
+            <button
               onClick={() => window.location.href = '/oem'}
               className="relative bg-gradient-to-r from-[#0056b3] to-[#0073e6] text-white px-8 py-3.5 rounded-full text-xs font-black uppercase tracking-widest hover:from-[#004494] hover:to-[#0056b3] transition-all shadow-2xl shadow-blue-500/40 active:scale-95 hover:scale-105 border-2 border-white/20 hover:border-white/40 group overflow-hidden animate-pulse-glow"
             >
@@ -613,7 +609,7 @@ const App = () => {
             </button>
           </div>
 
-          <button 
+          <button
             className={`lg:hidden p-2 rounded-xl transition-colors ${isScrolled ? 'bg-slate-100 text-slate-600' : 'bg-white/10 text-white backdrop-blur-md'}`}
             onClick={() => setIsMenuOpen(true)}
           >
@@ -623,11 +619,11 @@ const App = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[100vh] lg:h-[90vh] flex items-center overflow-hidden bg-slate-950 pt-32 pb-40">
+      <section className="relative min-h-[100vh] flex items-center overflow-hidden bg-slate-950 pt-32 pb-48">
         <div className="absolute inset-0 z-0">
-          <SafeImage 
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000" 
-            alt="World Network Vision" 
+          <SafeImage
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000"
+            alt="World Network Vision"
             className="w-full h-full object-cover opacity-40 animate-slow-zoom"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/60 to-transparent"></div>
@@ -636,24 +632,27 @@ const App = () => {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#0056b3]/20 border border-[#0056b3]/40 rounded-full mb-8">
+            <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#0056b3]/20 border border-[#0056b3]/40 rounded-full mb-6 mt-6">
               <span className="w-2 h-2 rounded-full bg-[#0056b3] animate-pulse"></span>
               <span className="text-[#0056b3] text-[10px] font-black uppercase tracking-[0.3em]">{t.heroTag}</span>
             </div>
             <h1 className="text-5xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-8 uppercase">
-              {t.heroTitle} <br/>
+              {t.heroTitle} <br />
               <span className="text-[#0056b3]">{t.heroSubtitle}</span>
             </h1>
-            <p className="text-slate-300 text-lg md:text-xl leading-relaxed mb-10 max-w-xl font-medium">
+            <p className="text-slate-300 text-lg md:text-xl leading-relaxed mb-5 max-w-xl font-medium">
               {t.heroDesc}
             </p>
             <div className="flex flex-wrap gap-5">
-              <button className="bg-[#0056b3] text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-black text-[11px] uppercase tracking-[0.2em] hover:bg-white hover:text-slate-950 transition-all flex items-center gap-3 group shadow-2xl">
-                {t.heroBtnPrimary} <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </button>
               <button 
                 onClick={() => window.location.href = 'https://inspur.com'}
-                className="bg-white/5 border border-white/20 text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-black text-[11px] uppercase tracking-[0.2em] hover:bg-white/10 transition-all backdrop-blur-sm"
+                className="cursor-pointer bg-[#0056b3] text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-black text-[11px] uppercase tracking-[0.2em] hover:bg-white hover:text-slate-950 transition-all flex items-center gap-3 group shadow-2xl"
+              >
+                {t.heroBtnPrimary} <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button
+                onClick={() => window.location.href = 'https://inspur.com'}
+                className="cursor-pointer bg-white/5 border border-white/20 text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-black text-[11px] uppercase tracking-[0.2em] hover:bg-white/10 transition-all backdrop-blur-sm"
               >
                 {t.heroBtnSecondary}
               </button>
@@ -693,21 +692,21 @@ const App = () => {
       {/* Stats Banner */}
       <section className="py-20 bg-[#0056b3] overflow-hidden relative">
         <div className="absolute inset-0 opacity-10">
-           <Network className="w-full h-full scale-150 rotate-12" />
+          <Network className="w-full h-full scale-150 rotate-12" />
         </div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
-            <div className="text-white text-center md:text-left md:max-w-xl">
-                <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter mb-6 leading-tight">{t.globalTitle}</h2>
-                <p className="text-blue-100 font-medium">{t.globalDesc}</p>
-            </div>
-            <div className="grid grid-cols-2 gap-8 md:gap-16 w-full md:w-auto">
-                {t.stats.map((s, idx) => (
-                  <div key={idx} className="text-white text-center md:text-left">
-                    <div className="text-4xl md:text-6xl font-black mb-2 tracking-tighter">{s.val}</div>
-                    <div className="text-[9px] md:text-[10px] font-black uppercase tracking-widest opacity-70">{s.label}</div>
-                  </div>
-                ))}
-            </div>
+          <div className="text-white text-center md:text-left md:max-w-xl">
+            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter mb-6 leading-tight">{t.globalTitle}</h2>
+            <p className="text-blue-100 font-medium">{t.globalDesc}</p>
+          </div>
+          <div className="grid grid-cols-2 gap-8 md:gap-16 w-full md:w-auto">
+            {t.stats.map((s, idx) => (
+              <div key={idx} className="text-white text-center md:text-left">
+                <div className="text-4xl md:text-6xl font-black mb-2 tracking-tighter">{s.val}</div>
+                <div className="text-[9px] md:text-[10px] font-black uppercase tracking-widest opacity-70">{s.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -723,8 +722,8 @@ const App = () => {
             {t.products.map((product) => {
               // Tất cả sản phẩm đều dùng nền trắng
               return (
-                <div 
-                  key={product.id} 
+                <div
+                  key={product.id}
                   className="group bg-white border border-slate-200 shadow-lg hover:shadow-2xl rounded-[2.5rem] md:rounded-[3rem] overflow-hidden transition-all duration-500 flex flex-col"
                 >
                   <div className="h-56 md:h-64 overflow-hidden relative">
@@ -743,7 +742,7 @@ const App = () => {
                         </div>
                       ))}
                     </div>
-                    <button 
+                    <button
                       onClick={() => window.location.href = product.link || '/contact'}
                       className="w-full py-4 bg-[#0056b3] hover:bg-[#004494] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all flex items-center justify-center gap-2"
                     >
@@ -765,9 +764,9 @@ const App = () => {
       </section>
 
       {/* Industries */}
-      <section className="py-24 md:py-32 bg-white overflow-hidden">
+      <section className="py-12 md:py-16 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-16 md:mb-20">{t.industryTitle}</h2>
+          <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-8 md:mb-10">{t.industryTitle}</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12">
             {[
               { icon: Activity, name: t.industries[0] },
@@ -789,9 +788,9 @@ const App = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-950 text-white pt-24 pb-12 border-t border-white/5">
+      <footer className="bg-slate-950 text-white pt-12 pb-6 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 mb-10">
             <div className="space-y-8 text-center md:text-left">
               <span className="font-black text-4xl tracking-tighter italic uppercase text-white">INSPUR</span>
               <p className="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto md:mx-0">{t.footerDesc}</p>
@@ -803,9 +802,9 @@ const App = () => {
                     '#'
                   ];
                   return (
-                    <a 
-                      key={idx} 
-                      href={socialLinks[idx]} 
+                    <a
+                      key={idx}
+                      href={socialLinks[idx]}
                       target={idx === 0 ? "_blank" : "_self"}
                       rel={idx === 0 ? "noopener noreferrer" : ""}
                       className="w-11 h-11 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-[#0056b3] transition-all cursor-pointer border border-white/5"
@@ -816,7 +815,7 @@ const App = () => {
                 })}
               </div>
             </div>
-            
+
             <div className="text-center md:text-left">
               <h5 className="text-[11px] font-black uppercase tracking-widest text-[#0056b3] mb-8">{t.footerProduct}</h5>
               <ul className="space-y-4 text-slate-400 text-sm font-bold">
@@ -850,7 +849,7 @@ const App = () => {
                 <span>admin@inspur.com.vn</span>
               </div>
               <div className="flex flex-col gap-3 pt-4">
-                <button 
+                <button
                   onClick={openZaloChat}
                   className="w-full md:w-auto flex items-center justify-center gap-3 px-6 py-3 bg-[#0068ff] text-white rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-[#0056cc] transition-all shadow-lg shadow-blue-500/20 active:scale-95"
                 >
@@ -861,15 +860,16 @@ const App = () => {
             </div>
           </div>
 
-          <div className="pt-12 border-t border-white/5 flex justify-center items-center">
-            <p className="text-slate-600 text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-center">{t.footerCopy}</p>
+          <div className="pt-6 border-t border-white/5 flex justify-center items-center">
+            <p className="text-slate-600 text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-center">© 2025 INSPUR VIETNAM</p>
           </div>
         </div>
       </footer>
 
 
 
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes slow-zoom {
           0% { transform: scale(1); }
           100% { transform: scale(1.1); }

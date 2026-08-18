@@ -410,8 +410,8 @@ const App = () => {
     oldFavicons.forEach(link => link.remove());
     
     // Set favicon.svg as primary favicon
-    setFaviconTag('shortcut icon', '/favicon.svg', null, 'image/svg+xml');
-    setFaviconTag('icon', '/favicon.svg', null, 'image/svg+xml');
+    setFaviconTag('shortcut icon', '/favicon.ico', null, 'image/x-icon');
+    setFaviconTag('icon', '/favicon.ico', null, 'image/x-icon');
     
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
@@ -642,9 +642,9 @@ const App = () => {
       )}
 
       {/* Footer */}
-      <footer className="bg-[#0a0a0a] text-white pt-20 pb-12 text-left">
+      <footer className="bg-[#0a0a0a] text-white pt-10 pb-6 text-left">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20 border-b border-white/5 pb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10 border-b border-white/5 pb-8">
             <div className="space-y-6">
               <TextLogo light={true} />
               <p className="text-slate-400 text-sm leading-relaxed">
@@ -706,7 +706,7 @@ const App = () => {
           </div>
           <div className="flex flex-col items-center justify-center text-center">
             <p className="text-slate-500 text-[10px] font-bold uppercase tracking-[0.3em] opacity-60">
-              {t.footerCopy}
+              © 2025 INSPUR VIETNAM
             </p>
           </div>
         </div>
