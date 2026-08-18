@@ -606,7 +606,15 @@ const App = () => {
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-2 bg-blue-50 text-[#0056b3] rounded-lg group-hover:bg-[#0056b3] group-hover:text-white transition-colors">
                       {(() => {
-                        const IconComponent = typeof product.icon === 'string' ? ICON_MAP[product.icon] || Server : product.icon || Server;
+                        let IconComponent = Server;
+                        if (typeof product.icon === 'string' && ICON_MAP[product.icon]) {
+                          IconComponent = ICON_MAP[product.icon];
+                        } else if (
+                          typeof product.icon === 'function' || 
+                          (typeof product.icon === 'object' && product.icon !== null && product.icon.$$typeof)
+                        ) {
+                          IconComponent = product.icon;
+                        }
                         return <IconComponent className="w-5 h-5" />;
                       })()}
                     </div>
