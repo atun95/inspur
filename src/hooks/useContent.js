@@ -24,10 +24,26 @@ export const useContent = (pageKey, defaultTranslations) => {
     loadContent();
   }, []);
 
-  const toggleLang = () => {
-    const newLang = lang === 'vi' ? 'en' : 'vi';
+  // Sync language state globally
+  useEffect(() => {
+    const handleLangChange = (e) => {
+      if (e.detail && e.detail.lang) {
+        setLang(e.detail.lang);
+      }
+    };
+    window.addEventListener('languageChange', handleLangChange);
+    return () => window.removeEventListener('languageChange', handleLangChange);
+  }, []);
+
+  const updateLangGlobally = (newLang) => {
     setLang(newLang);
     localStorage.setItem('appLang', newLang);
+    window.dispatchEvent(new CustomEvent('languageChange', { detail: { lang: newLang } }));
+  };
+
+  const toggleLang = () => {
+    const newLang = lang === 'vi' ? 'en' : 'vi';
+    updateLangGlobally(newLang);
   };
 
   // Helper for deep merging translations
