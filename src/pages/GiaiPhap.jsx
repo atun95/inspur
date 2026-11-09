@@ -15,12 +15,12 @@ import {
   Cpu,
   Shield,
   Activity,
-  ArrowRight,
   CheckCircle2,
   Menu,
   X
 } from 'lucide-react';
 import { Facebook, Linkedin, Youtube } from '../components/SocialIcons';
+import HeroTitle from '../components/HeroTitle';
 
 // Thành phần Image dự phòng
 const SafeImage = ({ src, alt, className }) => {
@@ -46,7 +46,6 @@ export const TRANSLATIONS = {
     nav: [
       { name: 'Về Inspur', url: '/about' },  
       { name: 'Sản phẩm', url: '/san-pham' },
-      { name: 'Tin tức và sự kiện', url: '/tin-tuc-va-su-kien' },
       { name: 'Liên hệ', url: '/contact' }
       
     ],
@@ -292,7 +291,7 @@ const App = () => {
     <div className="min-h-screen bg-[#f8fafc] font-sans text-slate-900 selection:bg-[#0056b3] selection:text-white">
 
       {/* Hero Section */}
-      <section className="relative pt-48 pb-24 px-6 overflow-hidden bg-slate-950 min-h-[500px] flex items-center">
+      <section className="relative pt-48 pb-24 px-6 overflow-hidden bg-slate-950 min-h-screen flex items-center">
         <div className="absolute inset-0 opacity-40">
             <SafeImage 
               src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2000" 
@@ -307,17 +306,11 @@ const App = () => {
               {t.heroTag}
             </span>
             <h1 className="text-3xl md:text-6xl font-black text-white leading-tight tracking-tighter mb-6">
-              {t.heroTitle}
+              <HeroTitle text={t.heroTitle} accent={t.heroTitle.split(' ').slice(-3).join(' ')} />
             </h1>
             <p className="text-slate-300 text-lg leading-relaxed font-light mb-8 max-w-xl">
               {t.heroDesc}
             </p>
-            <button 
-              onClick={() => window.location.href = '/contact'}
-              className="bg-white text-[#0056b3] px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-[#0056b3] hover:text-white transition-all shadow-xl flex items-center gap-2 w-fit group"
-            >
-              {t.btnPartner} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
           </div>
         </div>
       </section>

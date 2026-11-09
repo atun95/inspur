@@ -10,7 +10,6 @@ import {
   Server,
   Database,
   Cpu,
-  ArrowRight,
   Menu,
   X,
   Search,
@@ -31,6 +30,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { Facebook, Linkedin, Youtube } from '../components/SocialIcons';
+import HeroTitle from '../components/HeroTitle';
 
 const SafeImage = ({ src, alt, className }) => {
   const [error, setError] = useState(false);
@@ -74,7 +74,6 @@ export const TRANSLATIONS = {
       { name: 'Sản Phẩm', url: '/san-pham' },
       { name: 'Giải pháp', url: '/giai-phap' },
       { name: 'OEM', url: '/oem' },
-      { name: 'Tin tức và sự kiện', url: '/tin-tuc-va-su-kien' },
       { name: 'Liên hệ', url: '/contact' },
     ],
     contactBtn: "Liên hệ ngay",
@@ -183,7 +182,6 @@ export const TRANSLATIONS = {
       { name: 'Products', url: '/san-pham' },
       { name: 'Solutions', url: '/giai-phap' },
       { name: 'OEM', url: '/oem' },
-      { name: 'Events', url: '/tin-tuc-va-su-kien' },
       { name: 'Contact us', url: '/contact' },
     ],
     contactBtn: "Contact Now",
@@ -464,64 +462,46 @@ const App = () => {
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-[#0056b3] selection:text-white">
 
       {/* Hero Section */}
-      <section className="relative min-h-[100vh] flex items-center overflow-hidden bg-slate-950 pt-32 pb-48">
-        <div className="absolute inset-0 z-0">
+      <section className="relative pt-48 pb-24 px-6 overflow-hidden bg-slate-950 min-h-screen flex items-center">
+        <div className="absolute inset-0 opacity-40">
           <SafeImage
             src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000"
             alt="World Network Vision"
-            className="w-full h-full object-cover opacity-40 animate-slow-zoom"
+            className="w-full h-full object-cover animate-slow-zoom"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/60 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-slate-50 to-transparent z-1"></div>
         </div>
-
-        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
+        <div className="max-w-7xl mx-auto relative z-10 w-full">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#0056b3]/20 border border-[#0056b3]/40 rounded-full mb-6 mt-6">
-              <span className="w-2 h-2 rounded-full bg-[#0056b3] animate-pulse"></span>
-              <span className="text-[#0056b3] text-[10px] font-black uppercase tracking-[0.3em]">{t.heroTag}</span>
-            </div>
-            <h1 className="text-5xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-8 uppercase">
-              {t.heroTitle} <br />
-              <span className="text-[#0056b3]">{t.heroSubtitle}</span>
+            <span className="inline-block px-4 py-1.5 bg-[#0056b3]/20 border border-[#0056b3]/50 text-[#0056b3] text-[10px] font-bold rounded-full uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
+              {t.heroTag}
+            </span>
+            <h1 className="text-3xl md:text-6xl font-black text-white leading-tight tracking-tighter mb-6">
+              <HeroTitle text={`${t.heroTitle} ${t.heroSubtitle}`} accent={t.heroSubtitle} />
             </h1>
-            <p className="text-slate-300 text-lg md:text-xl leading-relaxed mb-5 max-w-xl font-medium">
+            <p className="text-slate-300 text-lg leading-relaxed font-light mb-8 max-w-xl">
               {t.heroDesc}
             </p>
-            <div className="flex flex-wrap gap-5">
-              <button 
-                onClick={() => window.location.href = 'https://inspur.com'}
-                className="cursor-pointer bg-[#0056b3] text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-black text-[11px] uppercase tracking-[0.2em] hover:bg-white hover:text-slate-950 transition-all flex items-center gap-3 group shadow-2xl"
-              >
-                {t.heroBtnPrimary} <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button
-                onClick={() => window.location.href = 'https://inspur.com'}
-                className="cursor-pointer bg-white/5 border border-white/20 text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-black text-[11px] uppercase tracking-[0.2em] hover:bg-white/10 transition-all backdrop-blur-sm"
-              >
-                {t.heroBtnSecondary}
-              </button>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Sectors */}
-      <section className="relative py-24 bg-slate-50 z-20 -mt-16 md:-mt-24 rounded-t-[3rem] md:rounded-t-[4rem]">
+      <section className="relative py-14 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16 md:mb-20">
-            <span className="text-[#0056b3] text-[10px] font-black uppercase tracking-[0.4em] block mb-4">{t.sectorsTag}</span>
+          <div className="text-center mb-10">
+            <span className="text-[#0056b3] text-[10px] font-black uppercase tracking-[0.4em] block mb-3">{t.sectorsTag}</span>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tighter uppercase">{t.sectorsTitle}</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {t.sectors.map((item, i) => (
-              <div key={i} className="p-8 md:p-10 bg-white rounded-[2.5rem] md:rounded-[3rem] hover:shadow-2xl transition-all duration-500 border border-slate-100 group">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-[#0056b3] text-white rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110 transition-transform shadow-lg shadow-blue-500/20">
-                  <item.icon size={28} />
+              <div key={i} className="p-6 md:p-8 bg-white rounded-[2rem] md:rounded-[2.5rem] hover:shadow-2xl transition-all duration-500 border border-slate-100 group">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-[#0056b3] text-white rounded-2xl flex items-center justify-center mb-4 md:mb-5 group-hover:scale-110 transition-transform shadow-lg shadow-blue-500/20">
+                  <item.icon size={24} />
                 </div>
-                <h3 className="text-xl md:text-2xl font-black mb-4 tracking-tight uppercase">{item.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed mb-6 md:mb-8 font-medium">{item.desc}</p>
-                <div className="space-y-3">
+                <h3 className="text-lg md:text-xl font-black mb-3 tracking-tight uppercase">{item.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed mb-4 md:mb-5 font-medium">{item.desc}</p>
+                <div className="space-y-2.5">
                   {item.features.map(f => (
                     <div key={f} className="flex items-center gap-3 text-[11px] font-bold text-slate-700">
                       <div className="w-1 h-1 rounded-full bg-[#0056b3]"></div> {f}
@@ -534,36 +514,15 @@ const App = () => {
         </div>
       </section>
 
-      {/* Stats Banner */}
-      <section className="py-20 bg-[#0056b3] overflow-hidden relative">
-        <div className="absolute inset-0 opacity-10">
-          <Network className="w-full h-full scale-150 rotate-12" />
-        </div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
-          <div className="text-white text-center md:text-left md:max-w-xl">
-            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter mb-6 leading-tight">{t.globalTitle}</h2>
-            <p className="text-blue-100 font-medium">{t.globalDesc}</p>
-          </div>
-          <div className="grid grid-cols-2 gap-8 md:gap-16 w-full md:w-auto">
-            {t.stats.map((s, idx) => (
-              <div key={idx} className="text-white text-center md:text-left">
-                <div className="text-4xl md:text-6xl font-black mb-2 tracking-tighter">{s.val}</div>
-                <div className="text-[9px] md:text-[10px] font-black uppercase tracking-widest opacity-70">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Portfolio */}
-      <section className="py-32 bg-slate-950">
+      <section className="py-16 bg-slate-950">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center md:text-left mb-16 md:mb-20">
-            <span className="text-[#0056b3] text-[10px] font-black uppercase tracking-[0.4em] block mb-4">{t.portfolioTag}</span>
+          <div className="text-center md:text-left mb-10">
+            <span className="text-[#0056b3] text-[10px] font-black uppercase tracking-[0.4em] block mb-3">{t.portfolioTag}</span>
             <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-2">{t.portfolioTitle}</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {t.products.map((product) => {
               // Tất cả sản phẩm đều dùng nền trắng
               return (
@@ -577,10 +536,10 @@ const App = () => {
                       {product.category}
                     </div>
                   </div>
-                  <div className="p-8 md:p-10 flex-1 flex flex-col">
-                    <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-4 tracking-tight">{product.title}</h3>
-                    <p className="text-sm leading-relaxed mb-8 line-clamp-2 text-slate-600">{product.desc}</p>
-                    <div className="space-y-3 mb-10 flex-1">
+                  <div className="p-6 md:p-8 flex-1 flex flex-col">
+                    <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-3 tracking-tight">{product.title}</h3>
+                    <p className="text-sm leading-relaxed mb-6 line-clamp-2 text-slate-600">{product.desc}</p>
+                    <div className="space-y-2.5 mb-8 flex-1">
                       {product.specs && Array.isArray(product.specs) && product.specs.map(s => (
                         <div key={s} className="flex items-center gap-3 text-[11px] font-bold text-slate-700">
                           <Check size={14} className="text-[#0056b3]" /> {s}
@@ -609,10 +568,10 @@ const App = () => {
       </section>
 
       {/* Industries */}
-      <section className="py-12 md:py-16 bg-white overflow-hidden">
+      <section className="py-8 md:py-10 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-8 md:mb-10">{t.industryTitle}</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12">
+          <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-6 md:mb-8">{t.industryTitle}</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
             {[
               { icon: Activity, name: t.industries[0] },
               { icon: Database, name: t.industries[1] },
@@ -621,8 +580,8 @@ const App = () => {
               { icon: Globe, name: t.industries[4] },
               { icon: Layers, name: t.industries[5] },
             ].map((item, i) => (
-              <div key={i} className="flex flex-col items-center gap-4 group cursor-pointer">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-3xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-blue-50 group-hover:text-[#0056b3] transition-all duration-500 group-hover:rotate-6">
+              <div key={i} className="flex flex-col items-center gap-3 group cursor-pointer">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-blue-50 group-hover:text-[#0056b3] transition-all duration-500 group-hover:rotate-6">
                   <item.icon size={28} />
                 </div>
                 <span className="text-[10px] font-black uppercase tracking-widest text-slate-500 group-hover:text-slate-900 transition-colors">{item.name}</span>

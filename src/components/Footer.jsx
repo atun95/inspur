@@ -85,7 +85,6 @@ const Footer = () => {
             <ul className="space-y-4 text-slate-400 text-sm font-bold">
               <li><a href="/san-pham" className="hover:text-white transition-colors">{t.linkSanPham}</a></li>
               <li><a href="/giai-phap" className="hover:text-white transition-colors">{t.linkGiaiPhap}</a></li>
-              <li><a href="/tin-tuc-va-su-kien" className="hover:text-white transition-colors">{t.linkTinTuc}</a></li>
             </ul>
           </div>
 

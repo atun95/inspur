@@ -19,6 +19,7 @@ import {
   X
 } from 'lucide-react';
 import { Facebook, Linkedin, Youtube } from '../components/SocialIcons';
+import HeroTitle from '../components/HeroTitle';
 
 // Thành phần Image dự phòng
 const SafeImage = ({ src, alt, className }) => {
@@ -37,12 +38,12 @@ const SafeImage = ({ src, alt, className }) => {
 // Sử dụng các ảnh local thay vì ảnh từ unsplash
 const SLIDE_IMAGES = [
   {
-    url: "./images/about2.jpg",
-    alt: "Inspur Technology"
+    url: "./images/about-vision.svg",
+    alt: "Inspur Vision"
   },
   {
-    url: "./images/about3.jpg",
-    alt: "Inspur Solutions"
+    url: "./images/about-mission.svg",
+    alt: "Inspur Mission"
   }
 ];
 
@@ -57,7 +58,6 @@ export const TRANSLATIONS = {
       
       { name: 'Sản phẩm', url: '/san-pham' },
       { name: 'Giải pháp', url: '/giai-phap' },
-      { name: 'Tin tức và sự kiện', url: '/tin-tuc-va-su-kien' },
       { name: 'Liên hệ', url: '/contact' }
     ],
     btnPartner: 'Hợp tác',
@@ -100,7 +100,6 @@ export const TRANSLATIONS = {
     nav: [
       { name: 'Products', url: '/san-pham' },
       { name: 'Solutions', url: '/giai-phap' },
-      { name: 'Events', url: '/tin-tuc-va-su-kien' },
       { name: 'Contact', url: '/contact' }
     ],
     btnPartner: 'Partner With Us',
@@ -201,39 +200,39 @@ const App = () => {
   return (
     <div className="min-h-screen bg-[#f1f5f9] font-sans text-slate-900 selection:bg-[#0056b3] selection:text-white">
       {/* Hero Section */}
-      <section className="relative pt-48 pb-24 px-6 overflow-hidden bg-slate-950">
+      <section className="relative pt-48 pb-24 px-6 overflow-hidden bg-slate-950 min-h-screen flex items-center">
         <div className="absolute inset-0 opacity-40">
             <SafeImage 
-              src="./images/about1.jpg" 
+              src="./images/about-hero.svg" 
               alt="Inspur Vietnam" 
-              className="w-full h-full object-cover object-center" 
+              className="w-full h-full object-cover" 
             />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-950/90"></div>
-        <div className="max-w-7xl mx-auto relative z-10 text-center md:text-left">
-          <span className="inline-block px-4 py-1 bg-[#0056b3] text-white text-[10px] font-bold rounded uppercase tracking-[0.2em] mb-6">
-            {t.heroTag}
-          </span>
-          <h1 className="text-3xl md:text-6xl font-black text-white leading-tight tracking-tighter mb-8 max-w-4xl uppercase">
-            {t.heroTitle.split(' ').map((word, i) => (
-              i === 2 ? <span key={i} className="text-[#0056b3] block md:inline">{word} </span> : word + ' '
-            ))}
-          </h1>
-          <p className="text-slate-400 text-base md:text-lg max-w-2xl leading-relaxed font-light">
-            {t.heroDesc}
-          </p>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
+        <div className="max-w-7xl mx-auto relative z-10 w-full">
+          <div className="max-w-3xl">
+            <span className="inline-block px-4 py-1.5 bg-[#0056b3]/20 border border-[#0056b3]/50 text-[#0056b3] text-[10px] font-bold rounded-full uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
+              {t.heroTag}
+            </span>
+            <h1 className="text-3xl md:text-6xl font-black text-white leading-tight tracking-tighter mb-6">
+              <HeroTitle text={t.heroTitle} accent={lang === 'vi' ? 'SÁNG' : 'INNOVATION'} />
+            </h1>
+            <p className="text-slate-300 text-lg leading-relaxed font-light mb-8 max-w-xl">
+              {t.heroDesc}
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 px-6 -mt-16 relative z-20">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+      <section className="py-8 px-6 -mt-12 relative z-20">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
           {t.stats.map((stat, i) => (
-            <div key={i} className="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col items-center text-center group hover:border-[#0056b3] transition-all">
-              <div className="p-3 bg-slate-50 rounded-2xl text-[#0056b3] mb-4 group-hover:scale-110 transition-transform">
-                <stat.icon className="w-6 h-6" />
+            <div key={i} className="bg-white px-4 py-5 md:px-6 md:py-6 rounded-2xl shadow-xl border border-slate-100 flex flex-col items-center text-center group hover:border-[#0056b3] transition-all">
+              <div className="p-2.5 bg-slate-50 rounded-xl text-[#0056b3] mb-3 group-hover:scale-110 transition-transform">
+                <stat.icon className="w-5 h-5" />
               </div>
-              <div className="text-2xl md:text-3xl font-black text-slate-900 mb-1">{stat.val}</div>
+              <div className="text-xl md:text-2xl font-black text-slate-900 mb-0.5">{stat.val}</div>
               <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">{stat.label}</div>
             </div>
           ))}
@@ -241,22 +240,22 @@ const App = () => {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-12">
-            <div className="relative pl-12">
-                <div className="absolute left-0 top-0 text-[#0056b3] opacity-20"><Eye size={64} /></div>
-                <h3 className="text-xl md:text-2xl font-black text-slate-900 uppercase tracking-tighter mb-4">{t.visionTitle}</h3>
-                <p className="text-slate-500 text-base leading-relaxed">{t.visionDesc}</p>
+      <section className="py-14 px-6 bg-white">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+          <div className="space-y-8">
+            <div className="relative pl-10">
+                <div className="absolute left-0 top-0 text-[#0056b3] opacity-20"><Eye size={48} /></div>
+                <h3 className="text-lg md:text-xl font-black text-slate-900 uppercase tracking-tighter mb-3">{t.visionTitle}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">{t.visionDesc}</p>
             </div>
-            <div className="relative pl-12">
-                <div className="absolute left-0 top-0 text-[#0056b3] opacity-20"><Target size={64} /></div>
-                <h3 className="text-xl md:text-2xl font-black text-slate-900 uppercase tracking-tighter mb-4">{t.missionTitle}</h3>
-                <p className="text-slate-500 text-base leading-relaxed">{t.missionDesc}</p>
+            <div className="relative pl-10">
+                <div className="absolute left-0 top-0 text-[#0056b3] opacity-20"><Target size={48} /></div>
+                <h3 className="text-lg md:text-xl font-black text-slate-900 uppercase tracking-tighter mb-3">{t.missionTitle}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">{t.missionDesc}</p>
             </div>
           </div>
           
-          <div className="relative rounded-[3rem] overflow-hidden shadow-2xl aspect-square bg-slate-100">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-100">
             {SLIDE_IMAGES.length > 0 ? (
               <>
                 {SLIDE_IMAGES.map((slide, index) => (
@@ -294,18 +293,18 @@ const App = () => {
       </section>
 
       {/* Values */}
-      <section className="py-24 px-6 bg-slate-50">
-        <div className="max-w-7xl mx-auto text-center mb-16">
-          <h2 className="text-2xl md:text-3xl font-black text-slate-900 uppercase tracking-tighter mb-4">{t.coreValues}</h2>
-          <div className="w-20 h-1.5 bg-[#0056b3] mx-auto rounded-full"></div>
+      <section className="py-14 px-6 bg-slate-50">
+        <div className="max-w-6xl mx-auto text-center mb-10">
+          <h2 className="text-xl md:text-2xl font-black text-slate-900 uppercase tracking-tighter mb-3">{t.coreValues}</h2>
+          <div className="w-16 h-1.5 bg-[#0056b3] mx-auto rounded-full"></div>
         </div>
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
           {t.values.map((val, i) => (
-            <div key={i} className="bg-white p-10 rounded-[2.5rem] border border-slate-100 hover:shadow-2xl transition-all group">
-              <div className="w-14 h-14 bg-slate-950 rounded-2xl flex items-center justify-center text-white mb-8 group-hover:bg-[#0056b3] transition-colors">
-                <val.icon className="w-6 h-6" />
+            <div key={i} className="bg-white px-8 py-7 rounded-3xl border border-slate-100 hover:shadow-2xl transition-all group">
+              <div className="w-11 h-11 bg-slate-950 rounded-xl flex items-center justify-center text-white mb-5 group-hover:bg-[#0056b3] transition-colors">
+                <val.icon className="w-5 h-5" />
               </div>
-              <h4 className="text-lg font-bold mb-4 text-slate-900">{val.title}</h4>
+              <h4 className="text-base font-bold mb-3 text-slate-900">{val.title}</h4>
               <p className="text-slate-500 text-xs leading-relaxed">{val.desc}</p>
             </div>
           ))}
@@ -313,11 +312,11 @@ const App = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto bg-[#0056b3] rounded-[3rem] p-10 md:p-20 text-center relative overflow-hidden shadow-2xl">
+      <section className="py-14 px-6">
+        <div className="max-w-4xl mx-auto bg-[#0056b3] rounded-3xl px-8 py-12 md:px-14 md:py-14 text-center relative overflow-hidden shadow-2xl">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
           <div className="relative z-10">
-            <h2 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tighter mb-8 leading-tight">
+            <h2 className="text-xl md:text-3xl font-black text-white uppercase tracking-tighter mb-6 leading-tight">
               {t.ctaTitle}
             </h2>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6">

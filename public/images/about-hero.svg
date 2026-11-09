@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#060d1f"/>
+      <stop offset="0.55" stop-color="#0a1e3f"/>
+      <stop offset="1" stop-color="#0056b3"/>
+    </linearGradient>
+    <linearGradient id="rack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#123a6d"/>
+      <stop offset="1" stop-color="#081a36"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0ea5e9" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#0ea5e9" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="700" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <g stroke="#38bdf8" stroke-opacity="0.07" stroke-width="1">
+    <path d="M0 140H1600M0 280H1600M0 420H1600M0 560H1600"/>
+    <path d="M200 0V700M400 0V700M600 0V700M800 0V700M1000 0V700M1200 0V700M1400 0V700"/>
+  </g>
+
+  <!-- Perspective floor -->
+  <polygon points="0,700 1600,700 1150,470 450,470" fill="url(#floor)"/>
+  <g stroke="#38bdf8" stroke-opacity="0.18" stroke-width="1.5">
+    <path d="M0 700 L450 470M400 700 L800 470M800 700 L800 470M1200 700 L800 470M1600 700 L1150 470"/>
+    <path d="M0 620 L480 490M1600 620 L1120 490M200 560 L560 505M1400 560 L1040 505"/>
+  </g>
+
+  <!-- Glows -->
+  <circle cx="1180" cy="240" r="330" fill="url(#glow)"/>
+  <circle cx="1180" cy="240" r="180" fill="url(#glow)"/>
+  <circle cx="300" cy="120" r="200" fill="url(#glow)" opacity="0.5"/>
+
+  <!-- Circuit traces left -->
+  <g fill="none" stroke="#38bdf8" stroke-width="2" stroke-opacity="0.5">
+    <path d="M60 520 H200 V430 H320"/>
+    <path d="M60 560 H160 V470 H300"/>
+    <path d="M60 600 H240 V520 H420"/>
+    <path d="M900 640 H1050 V560 H1180"/>
+    <path d="M1050 640 V540 H1220"/>
+  </g>
+  <g fill="#7dd3fc">
+    <circle cx="60" cy="520" r="5"/><circle cx="320" cy="430" r="5"/>
+    <circle cx="60" cy="560" r="5"/><circle cx="300" cy="470" r="5"/>
+    <circle cx="60" cy="600" r="5"/><circle cx="420" cy="520" r="5"/>
+    <circle cx="900" cy="640" r="5"/><circle cx="1180" cy="560" r="5"/>
+    <circle cx="1050" cy="640" r="5"/><circle cx="1220" cy="540" r="5"/>
+  </g>
+
+  <!-- Server racks -->
+  <g>
+    <rect x="980" y="180" width="150" height="330" rx="10" fill="url(#rack)" stroke="#38bdf8" stroke-opacity="0.35"/>
+    <rect x="1160" y="140" width="170" height="370" rx="10" fill="url(#rack)" stroke="#38bdf8" stroke-opacity="0.35"/>
+    <rect x="1360" y="220" width="130" height="290" rx="10" fill="url(#rack)" stroke="#38bdf8" stroke-opacity="0.35"/>
+    <!-- rack units -->
+    <g fill="#0b2a52" stroke="#38bdf8" stroke-opacity="0.3">
+      <rect x="995" y="200" width="120" height="34" rx="4"/>
+      <rect x="995" y="245" width="120" height="34" rx="4"/>
+      <rect x="995" y="290" width="120" height="34" rx="4"/>
+      <rect x="995" y="335" width="120" height="34" rx="4"/>
+      <rect x="995" y="380" width="120" height="34" rx="4"/>
+      <rect x="1175" y="160" width="140" height="40" rx="4"/>
+      <rect x="1175" y="212" width="140" height="40" rx="4"/>
+      <rect x="1175" y="264" width="140" height="40" rx="4"/>
+      <rect x="1175" y="316" width="140" height="40" rx="4"/>
+      <rect x="1175" y="368" width="140" height="40" rx="4"/>
+      <rect x="1375" y="240" width="100" height="38" rx="4"/>
+      <rect x="1375" y="290" width="100" height="38" rx="4"/>
+      <rect x="1375" y="340" width="100" height="38" rx="4"/>
+      <rect x="1375" y="390" width="100" height="38" rx="4"/>
+    </g>
+    <!-- status LEDs -->
+    <g>
+      <circle cx="1005" cy="217" r="4" fill="#34d399"/>
+      <circle cx="1025" cy="217" r="4" fill="#fbbf24"/>
+      <circle cx="1045" cy="217" r="4" fill="#38bdf8"/>
+      <circle cx="1005" cy="307" r="4" fill="#38bdf8"/>
+      <circle cx="1025" cy="307" r="4" fill="#34d399"/>
+      <circle cx="1185" cy="180" r="4" fill="#34d399"/>
+      <circle cx="1205" cy="180" r="4" fill="#fbbf24"/>
+      <circle cx="1225" cy="180" r="4" fill="#38bdf8"/>
+      <circle cx="1185" cy="336" r="4" fill="#fbbf24"/>
+      <circle cx="1205" cy="336" r="4" fill="#34d399"/>
+      <circle cx="1385" cy="259" r="4" fill="#34d399"/>
+      <circle cx="1405" cy="259" r="4" fill="#38bdf8"/>
+      <circle cx="1385" cy="359" r="4" fill="#fbbf24"/>
+    </g>
+    <!-- data beams -->
+    <rect x="1055" y="200" width="3" height="310" fill="url(#beam)" opacity="0.7"/>
+    <rect x="1230" y="160" width="3" height="350" fill="url(#beam)" opacity="0.7"/>
+    <rect x="1410" y="240" width="3" height="270" fill="url(#beam)" opacity="0.7"/>
+  </g>
+
+  <!-- Floating particles -->
+  <g fill="#7dd3fc">
+    <circle cx="520" cy="180" r="3" opacity="0.8"/>
+    <circle cx="640" cy="90" r="2.5" opacity="0.6"/>
+    <circle cx="760" cy="220" r="3.5" opacity="0.7"/>
+    <circle cx="840" cy="120" r="2" opacity="0.5"/>
+    <circle cx="480" cy="300" r="2.5" opacity="0.5"/>
+    <circle cx="700" cy="380" r="3" opacity="0.6"/>
+    <circle cx="880" cy="430" r="2.5" opacity="0.5"/>
+    <circle cx="980" cy="90" r="3" opacity="0.7"/>
+    <circle cx="1320" cy="90" r="2.5" opacity="0.6"/>
+    <circle cx="1480" cy="150" r="3" opacity="0.7"/>
+    <circle cx="1500" cy="380" r="2.5" opacity="0.5"/>
+  </g>
+
+  <!-- Hexagon accents -->
+  <g fill="none" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="2">
+    <polygon points="240,140 290,170 290,230 240,260 190,230 190,170"/>
+    <polygon points="860,300 900,325 900,375 860,400 820,375 820,325"/>
+  </g>
+  <circle cx="240" cy="200" r="8" fill="#38bdf8" opacity="0.8"/>
+  <circle cx="860" cy="350" r="8" fill="#38bdf8" opacity="0.8"/>
+</svg>

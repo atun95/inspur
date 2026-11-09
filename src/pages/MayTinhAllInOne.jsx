@@ -272,7 +272,6 @@ export const TRANSLATIONS = {
     nav: [
       { name: 'Về Inspur', url: '/about' },
       { name: 'Giải pháp', url: '/giai-phap'},
-      { name: 'Tin tức và sự kiện', url: '/tin-tuc-va-su-kien',},
       { name: 'Liên hệ', url: '/contact' },
     ],
     btnPartner: 'Liên hệ báo giá',
@@ -309,7 +308,6 @@ export const TRANSLATIONS = {
     nav: [
       { name: 'About Inspur', url: '/about' },
       { name: 'Products', url: '/san-pham'},
-      { name: 'Events', url: '/tin-tuc-va-su-kien'},
       { name: 'Contact', url: '/contact' }
     ],
     btnPartner: 'Request Quote',
@@ -447,10 +445,6 @@ const App = () => {
   );
 
   // Use general All-in-One translations (not specific product)
-  const displayHeroTag = t.heroTag || '';
-  const displayHeroTitle = t.heroTitle || '';
-  const displayHeroDesc = t.heroDesc || '';
-  const displayImg = t.img || './images/sanpham7.jpg';
 
   if (loading) {
     return (
@@ -466,28 +460,9 @@ const App = () => {
   return (
     <div className="min-h-screen bg-[#f8fafc] font-sans text-slate-900 selection:bg-[#0056b3] selection:text-white">
 
-      {/* Hero Section */}
-      <section className="relative pt-48 pb-20 px-6 bg-slate-950 overflow-hidden">
-        <div className="absolute inset-0 opacity-45">
-          <SafeImage src={displayImg} alt={displayHeroTitle} className="w-full h-full object-cover object-center" />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/65 via-slate-950/88 to-slate-950"></div>
-        <div className="max-w-7xl mx-auto relative z-10 text-center">
-          <span className="inline-block px-4 py-1.5 bg-[#0056b3]/20 border border-[#0056b3]/50 text-[#0056b3] text-[10px] font-bold rounded-full uppercase tracking-[0.2em] mb-6 shadow-[0_0_15px_rgba(0,86,179,0.3)]">
-            {displayHeroTag}
-          </span>
-          <h1 className="text-4xl md:text-6xl font-black text-white leading-tight tracking-tighter mb-6 uppercase">
-            {displayHeroTitle}
-          </h1>
-          <p className="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
-            {displayHeroDesc}
-          </p>
-        </div>
-      </section>
-
       {/* All-in-One Products Section - Display 4 products in a row */}
       {products.length > 0 && (
-        <section className="py-16 px-6 bg-white">
+        <section className="pt-32 pb-16 px-6 bg-white">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-12 text-center uppercase tracking-tight">
               {lang === 'vi' ? 'Các mẫu sản phẩm All-in-One' : 'All-in-One Product Models'}
@@ -521,25 +496,6 @@ const App = () => {
                         </div>
                         <h3 className="text-xl font-black text-slate-900 tracking-tight">{prodData.title}</h3>
                       </div>
-                      <p className="text-slate-500 text-sm leading-relaxed mb-4">
-                        {prodData.desc}
-                      </p>
-                      
-                      {/* Technical Specifications */}
-                      {prodData.technicalSpecs && prodData.technicalSpecs.length > 0 && (
-                        <div className="mt-4 pt-4 border-t border-slate-200">
-                          <h4 className="text-xs font-bold text-slate-700 uppercase tracking-widest mb-3">{prodData.specsTitle || (lang === 'vi' ? 'Thông số kỹ thuật' : 'Technical Specs')}</h4>
-                          <div className="space-y-2">
-                            {prodData.technicalSpecs.slice(0, 4).map((spec, idx) => (
-                              <div key={idx} className="flex justify-between items-start gap-2">
-                                <span className="text-[10px] font-semibold text-slate-600 uppercase tracking-wide flex-shrink-0">{spec.label}:</span>
-                                <span className="text-[11px] font-bold text-slate-900 text-right">{spec.value}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                      
                       {product.url && (
                         <div className="flex items-center gap-2 text-[#0056b3] text-sm font-bold uppercase tracking-widest mt-4 pt-4 border-t border-slate-200">
                           <span>{lang === 'vi' ? 'Xem chi tiết' : 'View Details'}</span>

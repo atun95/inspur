@@ -12,7 +12,6 @@ import {
   MousePointer2,
   Keyboard,
   Cpu,
-  ArrowRight,
   Menu,
   X,
   Check,
@@ -22,6 +21,7 @@ import {
   MessageSquare
 } from 'lucide-react';
 import { Facebook, Linkedin, Youtube } from '../components/SocialIcons';
+import HeroTitle from '../components/HeroTitle';
 
 const SafeImage = ({ src, alt, className }) => {
   const [error, setError] = useState(false);
@@ -48,11 +48,11 @@ export const TRANSLATIONS = {
       { name: 'Sản Phẩm', url: '/san-pham' },
       { name: 'Giải pháp', url: '/giai-phap' },
       { name: 'OEM', url: '/oem' },
-      { name: 'Tin tức và sự kiện', url: '/tin-tuc-va-su-kien' },
       { name: 'Liên hệ', url: '/contact' },
     ],
     contactBtn: "Liên hệ ngay",
     heroTag: "Dịch vụ OEM & Gia công Chuyên nghiệp",
+    btnPartner: 'Liên hệ OEM',
     heroTitle: "SẢN PHẨM OEM",
     heroSubtitle: "CHẤT LƯỢNG CAO",
     heroDesc: "Inspur cung cấp dịch vụ OEM và gia công thiết bị công nghệ với chất lượng đạt chuẩn quốc tế, đáp ứng mọi nhu cầu sản xuất và thương hiệu hóa sản phẩm.",
@@ -153,11 +153,11 @@ export const TRANSLATIONS = {
       { name: 'Products', url: '/san-pham' },
       { name: 'Solutions', url: '/giai-phap' },
       { name: 'OEM', url: '/oem' },
-      { name: 'Events', url: '/tin-tuc-va-su-kien' },
       { name: 'Contact', url: '/contact' },
     ],
     contactBtn: "Contact Now",
     heroTag: "Professional OEM & Manufacturing Services",
+    btnPartner: 'Contact OEM',
     heroTitle: "HIGH-QUALITY",
     heroSubtitle: "OEM PRODUCTS",
     heroDesc: "Inspur provides OEM and manufacturing services for technology devices with international standard quality, meeting all production and branding needs.",
@@ -480,28 +480,24 @@ const App = () => {
       
 
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-slate-950 pt-32 pb-20">
-        <div className="absolute inset-0 z-0">
+      <section className="relative pt-48 pb-24 px-6 overflow-hidden bg-slate-950 min-h-screen flex items-center">
+        <div className="absolute inset-0 opacity-40">
           <SafeImage 
             src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=2000" 
             alt="OEM Manufacturing" 
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/60 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-slate-50 to-transparent z-1"></div>
         </div>
-
-        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
+        <div className="max-w-7xl mx-auto relative z-10 w-full">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#0056b3]/20 border border-[#0056b3]/40 rounded-full mb-8">
-              <span className="w-2 h-2 rounded-full bg-[#0056b3] animate-pulse"></span>
-              <span className="text-[#0056b3] text-[10px] font-black uppercase tracking-[0.3em]">{t.heroTag}</span>
-            </div>
-            <h1 className="text-5xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-8 uppercase">
-              {t.heroTitle} <br/>
-              <span className="text-[#0056b3]">{t.heroSubtitle}</span>
+            <span className="inline-block px-4 py-1.5 bg-[#0056b3]/20 border border-[#0056b3]/50 text-[#0056b3] text-[10px] font-bold rounded-full uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
+              {t.heroTag}
+            </span>
+            <h1 className="text-3xl md:text-6xl font-black text-white leading-tight tracking-tighter mb-6">
+              <HeroTitle text={`${t.heroTitle} ${t.heroSubtitle}`} accent={t.heroSubtitle} />
             </h1>
-            <p className="text-slate-300 text-lg md:text-xl leading-relaxed mb-10 max-w-xl font-medium">
+            <p className="text-slate-300 text-lg leading-relaxed font-light mb-8 max-w-xl">
               {t.heroDesc}
             </p>
           </div>
@@ -509,7 +505,7 @@ const App = () => {
       </section>
 
       {/* Products Section */}
-      <section className="relative py-24 bg-white z-20 -mt-16 md:-mt-24 rounded-t-[3rem] md:rounded-t-[4rem]">
+      <section className="relative py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16 md:mb-20">
             <span className="text-[#0056b3] text-[10px] font-black uppercase tracking-[0.4em] block mb-4">{t.productsTag}</span>

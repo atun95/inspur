@@ -5,10 +5,10 @@ import About from './pages/About';
 import SanPham from './pages/SanPham';
 import GiaiPhap from './pages/GiaiPhap';
 import OEM from './pages/OEM';
-import TTVSK from './pages/TTVSK';
 import Contact from './pages/Contact';
 import ManHinhInspur from './pages/ManHinhInspur';
 import MayTinhAllInOne from './pages/MayTinhAllInOne';
+import InspurArm from './pages/InspurArm';
 import Admin from './pages/Admin';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -61,9 +61,6 @@ function App() {
           <Route path="/oem" element={<OEM />} />
           <Route path="/oem/" element={<OEM />} />
           
-          <Route path="/tin-tuc-va-su-kien" element={<TTVSK />} />
-          <Route path="/tin-tuc-va-su-kien/" element={<TTVSK />} />
-          
           <Route path="/contact" element={<Contact />} />
           <Route path="/contact/" element={<Contact />} />
           
@@ -72,6 +69,9 @@ function App() {
           
           <Route path="/may-tinh-all-in-one" element={<MayTinhAllInOne />} />
           <Route path="/may-tinh-all-in-one/" element={<MayTinhAllInOne />} />
+          
+          <Route path="/inspur-arm" element={<InspurArm />} />
+          <Route path="/inspur-arm/" element={<InspurArm />} />
           
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/" element={<Admin />} />

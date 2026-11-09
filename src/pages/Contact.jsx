@@ -15,6 +15,7 @@ import {
   X
 } from 'lucide-react';
 import { Facebook, Linkedin, Youtube } from '../components/SocialIcons';
+import HeroTitle from '../components/HeroTitle';
 
 // Thành phần Image dự phòng
 const SafeImage = ({ src, alt, className }) => {
@@ -40,12 +41,13 @@ export const TRANSLATIONS = {
     nav: [
       { name: 'Về Inspur', url: '/about' },
       { name: 'Sản phẩm', url: '/san-pham' },
-      { name: 'Giải pháp', url: '/giai-phap' },
-      { name: 'Tin tức và sự kiện', url: '/tin-tuc-va-su-kien' }
+      { name: 'Giải pháp', url: '/giai-phap' }
       
     ],
     btnPartner: 'Hợp tác',
+    heroTag: 'Inspur Vietnam',
     headerTitle: 'LIÊN HỆ VỚI CHÚNG TÔI',
+    headerDesc: 'Chuyên gia Inspur luôn sẵn sàng lắng nghe và giải đáp mọi thắc mắc về giải pháp hạ tầng số cho doanh nghiệp của bạn.',
     infoTitle: 'Thông tin liên hệ',
     formTitle: 'Gửi tin nhắn',
     formDesc: 'Vui lòng điền thông tin bên dưới, chúng tôi sẽ phản hồi trong vòng 24 giờ.',
@@ -80,10 +82,10 @@ export const TRANSLATIONS = {
       { name: 'About Inspur', url: '/about' },
       { name: 'Products', url: '/san-pham' },
       { name: 'Solutions', url: '/giai-phap' },
-      { name: 'Events', url: '/tin-tuc-va-su-kien' },
       
     ],
     btnPartner: 'Partner With Us',
+    heroTag: 'Inspur Vietnam',
     headerTitle: 'GET IN TOUCH WITH US',
     headerDesc: 'Inspur experts are always ready to listen and answer any questions about digital infrastructure solutions for your business.',
     infoTitle: 'Contact Information',
@@ -210,7 +212,9 @@ const App = () => {
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#f8fafc]"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-20">
-          <h1 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">{t.headerTitle}</h1>
+          <h1 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">
+            <HeroTitle text={t.headerTitle} accent={t.headerTitle.split(' ').slice(-2).join(' ')} />
+          </h1>
           <p className="text-slate-400 max-w-2xl text-sm md:text-base">{t.headerDesc}</p>
         </div>
       </div>

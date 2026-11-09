@@ -30,6 +30,7 @@ import {
   Smartphone
 } from 'lucide-react';
 import { Facebook, Linkedin, Youtube } from '../components/SocialIcons';
+import HeroTitle from '../components/HeroTitle';
 
 // Thành phần Image dự phòng
 const SafeImage = ({ src, alt, className }) => {
@@ -49,51 +50,31 @@ export const TRANSLATIONS = {
   vi: {
     seo: {
       title: "Phần cứng Inspur | PC, Laptop, All-in-One & ARM Solutions",
-      desc: "Khám phá danh mục thiết bị phần cứng cao cấp từ Inspur: Máy tính để bàn, Laptop doanh nghiệp, PC All-in-One và hệ thống ARM hiệu năng cao.",
-      keywords: "Inspur PC, Inspur Laptop, All-in-One, ARM Server, Inspur Hardware"
+      desc: "Khám phá danh mục thiết bị phần cứng cao cấp từ Inspur: Màn hình chuyên nghiệp, máy tính All-in-One và tay đỡ màn hình Inspur Arm.",
+      keywords: "Inspur Monitor, Inspur All-in-One, Inspur Arm, Monitor Arm, Inspur Hardware"
     },
     nav: [
       { name: 'Về Inspur', url: '/about' },
       { name: 'Giải pháp', url: '/giai-phap'},
-      { name: 'Tin tức và sự kiện', url: '/tin-tuc-va-su-kien',},
       { name: 'Liên hệ', url: '/contact' },
       
     ],
     btnPartner: 'Liên hệ báo giá',
     heroTag: 'Giải Pháp Hạ Tầng Số Toàn Cầu 2025',
     heroTitle: 'THIẾT BỊ ĐẦU CUỐI & HỆ THỐNG TÍNH TOÁN HIỆN ĐẠI',
-    heroDesc: 'Từ những chiếc Laptop mỏng nhẹ đến hệ thống PC hiệu năng cao và máy chủ ARM tối ưu năng lượng, Inspur mang đến công cụ hoàn hảo cho kỷ nguyên số.',
+    heroDesc: 'Từ màn hình chuyên nghiệp, máy tính All-in-One đến tay đỡ màn hình Inspur Arm hiện đại, chúng tôi mang đến công cụ hoàn hảo cho kỷ nguyên số.',
     filterAll: 'Tất cả sản phẩm',
-    categories: ['Monitor', 'Laptop', 'All-in-One', 'Server & Network', 'Smart Robots', 'Energy Solutions', 'Interactive Displays', 'Chuột AI'],
+    categories: ['Monitor', 'All-in-One', 'Monitor Arm'],
     products: [
-      {
-        id: 1,
-        category: 'Chuột AI',
-        title: 'Inspur AI Mouse',
-        desc: 'Chuột thông minh tích hợp công nghệ AI, hỗ trợ điều khiển bằng cử chỉ và tối ưu hóa năng suất làm việc.',
-        specs: ['Công nghệ AI thông minh', 'Điều khiển cử chỉ', 'Kết nối không dây'],
-        img: './images/03.jpg',
-        icon: MousePointer2,
-        url: '/san-phamai-mouse/'
-      },
-      {
-        id: 2,
-        category: 'Laptop',
-        title: 'Inspur Laptop',
-        desc: 'Laptop doanh nghiệp mỏng nhẹ, bảo mật cao với hiệu năng vượt trội cho văn phòng hiện đại.',
-        specs: ['Intel Core Ultra', 'Màn hình Full HD', 'Bảo mật vân tay & IR'],
-        img: './images/sanpham6.jpg',
-        icon: LaptopIcon
-      },
       {
         id: 3,
         category: 'Monitor',
         title: 'Inspur Monitor',
         desc: 'Màn hình chuyên nghiệp với độ phân giải cao, tần số quét nhanh và công nghệ hiển thị tiên tiến cho công việc chuyên nghiệp.',
         specs: ['Độ phân giải 4K/UHD', 'Tần số quét 144Hz', 'Công nghệ IPS/VA Panel'],
-        img: './images/monitor.jpg',
+        img: './images/IIP270QT-6.png',
         icon: Monitor,
-        url: '/san-phamman-hinh-inspur/'
+        url: '/man-hinh-inspur/'
       },
       {
         id: 4,
@@ -101,72 +82,19 @@ export const TRANSLATIONS = {
         title: 'Inspur All in one',
         desc: 'Giải pháp máy tính tất cả trong một, tiết kiệm không gian và tích hợp camera AI bảo mật.',
         specs: ['Màn hình tràn viền 27"', 'Loa tích hợp Hi-Fi', 'Kết nối Wi-Fi 6E'],
-        img: './images/sanpham7.jpg',
+        img: './images/UT238-5.png',
         icon: MousePointer2,
-        url: '/san-phammay-tinh-all-in-one/'
+        url: '/may-tinh-all-in-one/'
       },
       {
-        id: 4,
-        category: 'Server & Network',
-        title: 'Inspur Server Rack Series',
-        desc: 'Hệ thống máy chủ rack chuyên nghiệp với thiết kế modular, hỗ trợ nhiều cấu hình linh hoạt cho trung tâm dữ liệu.',
-        specs: ['Thiết kế modular linh hoạt', 'Hỗ trợ nhiều cấu hình', 'Quản lý nhiệt độ thông minh'],
-        img: './images/sanpham3.jpg',
-        icon: Server
-      },
-      {
-        id: 5,
-        category: 'Server & Network',
-        title: 'Inspur Network Switch Series',
-        desc: 'Bộ chuyển mạch mạng enterprise với hiệu năng cao, hỗ trợ PoE và quản lý tập trung.',
-        specs: ['Hỗ trợ PoE/PoE+', 'Quản lý tập trung', 'Băng thông cao'],
-        img: './images/sanpham4.jpg',
-        icon: Network
-      },
-      {
-        id: 6,
-        category: 'Server & Network',
-        title: 'Inspur AI Server',
-        desc: 'Máy chủ AI chuyên dụng với khả năng xử lý deep learning và training mô hình AI quy mô lớn.',
-        specs: ['Tối ưu cho AI/ML', 'Hỗ trợ GPU cao cấp', 'Hiệu năng xử lý vượt trội'],
-        img: './images/sanpham2.jpg',
-        icon: Cpu
-      },
-      {
-        id: 7,
-        category: 'Smart Robots',
-        title: 'Inspur Autonomous Sweeper',
-        desc: 'Robot quét đường tự động với công nghệ AI, hoạt động độc lập và thông minh cho môi trường đô thị.',
-        specs: ['Điều khiển tự động', 'Cảm biến AI thông minh', 'Pin lâu dài'],
-        img: './images/about2.jpg',
-        icon: Bot
-      },
-      {
-        id: 8,
-        category: 'Smart Robots',
-        title: 'Inspur Service Robot',
-        desc: 'Robot dịch vụ thông minh với khả năng tương tác và điều hướng tự động, phù hợp cho nhiều môi trường.',
-        specs: ['Tương tác thông minh', 'Điều hướng tự động', 'Giao diện thân thiện'],
-        img: './images/about3.jpg',
-        icon: Bot
-      },
-      {
-        id: 9,
-        category: 'Energy Solutions',
-        title: 'Inspur EV Charging Station',
-        desc: 'Trạm sạc xe điện thông minh với công nghệ sạc nhanh, quản lý từ xa và tích hợp thanh toán.',
-        specs: ['Sạc nhanh công suất cao', 'Quản lý từ xa', 'Tích hợp thanh toán'],
-        img: './images/sanpham.jpg',
-        icon: Plug
-      },
-           {
-        id: 10,
-        category: 'Interactive Displays',
-        title: 'Inspur Interactive Panel',
-        desc: 'Màn hình tương tác thông minh với công nghệ cảm ứng đa điểm, phù hợp cho giáo dục và văn phòng.',
-        specs: ['Cảm ứng đa điểm', 'Độ phân giải cao', 'Tích hợp Android'],
-        img: './images/sanpham1.jpg',
-        icon: Monitor
+        id: 11,
+        category: 'Monitor Arm',
+        title: 'Inspur Arm',
+        desc: 'Giá đỡ màn hình máy tính với khí nén cao cấp, điều chỉnh đa góc và giải phóng không gian bàn làm việc.',
+        specs: ['Tải trọng lên đến 9kg', 'Xoay/nghiêng/nâng hạ linh hoạt', 'Kẹp bàn chắc chắn, quản lý cáp gọn gàng'],
+        img: './images/M252-10.png',
+        icon: Monitor,
+        url: '/inspur-arm/'
       },
     ],
     footerDesc: 'Inspur Việt Nam tự hào cung cấp các giải pháp máy chủ, lưu trữ và thiết bị đầu cuối tốt nhất thế giới, đồng hành cùng sự thành công của doanh nghiệp Việt.',
@@ -180,51 +108,31 @@ export const TRANSLATIONS = {
   en: {
     seo: {
       title: "Inspur Hardware | PC, Laptop, All-in-One & ARM Solutions",
-      desc: "Explore high-end hardware from Inspur: Desktops, Business Laptops, All-in-One PCs, and high-performance ARM systems.",
-      keywords: "Inspur PC, Inspur Laptop, All-in-One, ARM Server, Inspur Hardware"
+      desc: "Explore high-end hardware from Inspur: professional monitors, All-in-One PCs, and the Inspur Arm monitor mount.",
+      keywords: "Inspur Monitor, Inspur All-in-One, Inspur Arm, Monitor Arm, Inspur Hardware"
     },
     nav: [
       { name: 'About Inspur', url: '/about' },
       { name: 'Products', url: '/san-pham'},
-      { name: 'Events', url: '/tin-tuc-va-su-kien'},
       { name: 'Contact', url: '/contact' }
       
     ],
     btnPartner: 'Request Quote',
     heroTag: 'Global Digital Infrastructure 2025',
     heroTitle: 'MODERN END-POINT DEVICES & COMPUTING',
-    heroDesc: 'From lightweight laptops to high-performance desktops and energy-efficient ARM systems, Inspur provides tools for the digital era.',
+    heroDesc: 'From professional monitors and All-in-One PCs to the modern Inspur Arm monitor mount, we provide the perfect tools for the digital era.',
     filterAll: 'All Products',
-    categories: ['Monitor', 'Laptop', 'All-in-One', 'Server & Network', 'Smart Robots', 'Energy Solutions', 'Interactive Displays', 'AI Mouse'],
+    categories: ['Monitor', 'All-in-One', 'Monitor Arm'],
     products: [
-      {
-        id: 1,
-        category: 'AI Mouse',
-        title: 'Inspur AI Mouse',
-        desc: 'Smart mouse with integrated AI technology, supporting gesture control and productivity optimization.',
-        specs: ['Smart AI Technology', 'Gesture Control', 'Wireless Connectivity'],
-        img: './images/03.jpg',
-        icon: MousePointer2,
-        url: '/san-phamai-mouse/'
-      },
-      {
-        id: 2,
-        category: 'Laptop',
-        title: 'Inspur Laptop',
-        desc: 'Thin & light business laptop with high security and exceptional performance for modern offices.',
-        specs: ['Intel Core Ultra', 'Full HD Display', 'Fingerprint & IR Security'],
-        img: './images/sanpham6.jpg',
-        icon: LaptopIcon
-      },
       {
         id: 3,
         category: 'Monitor',
         title: 'Inspur Monitor',
         desc: 'Professional display with high resolution, fast refresh rate and advanced display technology for professional work.',
         specs: ['4K/UHD Resolution', '144Hz Refresh Rate', 'IPS/VA Panel Technology'],
-        img: './images/monitor.jpg',
+        img: './images/IIP270QT-6.png',
         icon: Monitor,
-        url: '/san-phamman-hinh-inspur/'
+        url: '/man-hinh-inspur/'
       },
       {
         id: 4,
@@ -232,72 +140,19 @@ export const TRANSLATIONS = {
         title: 'Inspur All in one',
         desc: 'All-in-one computing solution, space-saving with integrated AI security camera.',
         specs: ['27" Edge-to-edge Display', 'Integrated Hi-Fi Speakers', 'Wi-Fi 6E Connectivity'],
-        img: './images/sanpham7.jpg',
+        img: './images/UT238-5.png',
         icon: MousePointer2,
-        url: '/san-phammay-tinh-all-in-one/'
+        url: '/may-tinh-all-in-one/'
       },
       {
-        id: 4,
-        category: 'Server & Network',
-        title: 'Inspur Server Rack Series',
-        desc: 'Professional rack server systems with modular design, supporting flexible configurations for data centers.',
-        specs: ['Flexible modular design', 'Multiple configuration support', 'Intelligent thermal management'],
-        img: './images/sanpham4.jpg',
-        icon: Server
-      },
-      {
-        id: 5,
-        category: 'Server & Network',
-        title: 'Inspur Network Switch Series',
-        desc: 'Enterprise network switches with high performance, PoE support and centralized management.',
-        specs: ['PoE/PoE+ Support', 'Centralized Management', 'High Bandwidth'],
-        img: './images/sanpham5.jpg',
-        icon: Network
-      },
-      {
-        id: 6,
-        category: 'Server & Network',
-        title: 'Inspur AI Server',
-        desc: 'Dedicated AI server with deep learning processing capabilities and large-scale AI model training.',
-        specs: ['Optimized for AI/ML', 'High-end GPU Support', 'Outstanding Processing Power'],
-        img: './images/sanpham2.jpg',
-        icon: Cpu
-      },
-      {
-        id: 7,
-        category: 'Smart Robots',
-        title: 'Inspur Autonomous Sweeper',
-        desc: 'Autonomous street sweeper robot with AI technology, operating independently and intelligently for urban environments.',
-        specs: ['Autonomous Control', 'Smart AI Sensors', 'Long-lasting Battery'],
-        img: './images/about2.jpg',
-        icon: Bot
-      },
-      {
-        id: 8,
-        category: 'Smart Robots',
-        title: 'Inspur Service Robot',
-        desc: 'Smart service robot with interaction and autonomous navigation capabilities, suitable for various environments.',
-        specs: ['Smart Interaction', 'Autonomous Navigation', 'User-friendly Interface'],
-        img: './images/about3.jpg',
-        icon: Bot
-      },
-      {
-        id: 9,
-        category: 'Energy Solutions',
-        title: 'Inspur EV Charging Station',
-        desc: 'Smart EV charging station with fast charging technology, remote management and payment integration.',
-        specs: ['High Power Fast Charging', 'Remote Management', 'Payment Integration'],
-        img: './images/sanpham.jpg',
-        icon: Plug
-      },
-           {
-        id: 10,
-        category: 'Interactive Displays',
-        title: 'Inspur Interactive Panel',
-        desc: 'Smart interactive display with multi-touch technology, suitable for education and office environments.',
-        specs: ['Multi-touch Support', 'High Resolution', 'Android Integration'],
-        img: './images/sanpham1.jpg',
-        icon: Monitor
+        id: 11,
+        category: 'Monitor Arm',
+        title: 'Inspur Arm',
+        desc: 'Premium gas-spring monitor arm with multi-angle adjustment, freeing up desk space.',
+        specs: ['Load capacity up to 9kg', 'Flexible swivel/tilt/height', 'Sturdy desk clamp, tidy cable management'],
+        img: './images/M252-10.png',
+        icon: Monitor,
+        url: '/inspur-arm/'
       },
     ],
     footerDesc: 'Inspur Vietnam provides world-class servers, storage, and endpoint devices, driving success for Vietnamese enterprises.',
@@ -428,21 +283,23 @@ const App = () => {
     <div className="min-h-screen bg-[#f8fafc] font-sans text-slate-900 selection:bg-[#0056b3] selection:text-white">
 
       {/* Hero Section */}
-      <section className="relative pt-48 pb-20 px-6 bg-slate-950 overflow-hidden">
-        <div className="absolute inset-0 opacity-45">
-          <SafeImage src="./images/sanpham-hero.jpg" alt="Inspur Products" className="w-full h-full object-cover object-center" />
+      <section className="relative pt-48 pb-24 px-6 overflow-hidden bg-slate-950 min-h-screen flex items-center">
+        <div className="absolute inset-0 opacity-40">
+          <SafeImage src="./images/sanpham-hero.jpg" alt="Inspur Products" className="w-full h-full object-cover" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/65 via-slate-950/88 to-slate-950"></div>
-        <div className="max-w-7xl mx-auto relative z-10 text-center">
-          <span className="inline-block px-4 py-1.5 bg-[#0056b3]/20 border border-[#0056b3]/50 text-[#0056b3] text-[10px] font-bold rounded-full uppercase tracking-[0.2em] mb-6 shadow-[0_0_15px_rgba(0,86,179,0.3)]">
-            {t.heroTag}
-          </span>
-          <h1 className="text-4xl md:text-6xl font-black text-white leading-tight tracking-tighter mb-6 uppercase">
-            {t.heroTitle}
-          </h1>
-          <p className="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
-            {t.heroDesc}
-          </p>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
+        <div className="max-w-7xl mx-auto relative z-10 w-full">
+          <div className="max-w-3xl">
+            <span className="inline-block px-4 py-1.5 bg-[#0056b3]/20 border border-[#0056b3]/50 text-[#0056b3] text-[10px] font-bold rounded-full uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
+              {t.heroTag}
+            </span>
+            <h1 className="text-3xl md:text-6xl font-black text-white leading-tight tracking-tighter mb-6">
+              <HeroTitle text={t.heroTitle} accent={t.heroTitle.includes('&') ? t.heroTitle.slice(t.heroTitle.indexOf('&')).trim() : ''} />
+            </h1>
+            <p className="text-slate-300 text-lg leading-relaxed font-light mb-8 max-w-xl">
+              {t.heroDesc}
+            </p>
+          </div>
         </div>
       </section>
 
@@ -491,7 +348,7 @@ const App = () => {
                 className="group bg-white rounded-[2rem] border border-slate-100 hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-500 overflow-hidden flex flex-col"
               >
                 <div className="relative h-64 overflow-hidden bg-slate-100">
-                  <SafeImage src={product.img} alt={product.title} className={`w-full h-full ${product.id === 1 ? 'object-contain' : 'object-cover'} transition-transform duration-700 group-hover:scale-110`} />
+                  <SafeImage src={product.img} alt={product.title} className="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-white/90 backdrop-blur text-[9px] font-black uppercase tracking-widest text-[#0056b3] rounded-lg shadow-sm border border-white">
                       {product.category}

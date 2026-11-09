@@ -10,7 +10,6 @@ const HEADER_TRANSLATIONS = {
       { name: 'Sản Phẩm', url: '/san-pham' },
       { name: 'Giải pháp', url: '/giai-phap' },
       { name: 'OEM', url: '/oem' },
-      { name: 'Tin tức và sự kiện', url: '/tin-tuc-va-su-kien' },
       { name: 'Liên hệ', url: '/contact' },
     ],
     oemContactBtn: "Liên hệ OEM",
@@ -21,7 +20,6 @@ const HEADER_TRANSLATIONS = {
       { name: 'Products', url: '/san-pham' },
       { name: 'Solutions', url: '/giai-phap' },
       { name: 'OEM', url: '/oem' },
-      { name: 'Events', url: '/tin-tuc-va-su-kien' },
       { name: 'Contact us', url: '/contact' },
     ],
     oemContactBtn: "Contact OEM",
@@ -31,7 +29,9 @@ const HEADER_TRANSLATIONS = {
 const Header = () => {
   const { lang, toggleLang, t } = useContent('header', HEADER_TRANSLATIONS);
   const location = useLocation();
-  const forceDarkText = location.pathname === '/tin-tuc-va-su-kien';
+  const LIGHT_BG_ROUTES = ['/man-hinh-inspur', '/may-tinh-all-in-one', '/inspur-arm'];
+  const cleanPath = location.pathname.replace(/\/$/, '');
+  const forceDarkText = cleanPath === '/tin-tuc-va-su-kien' || LIGHT_BG_ROUTES.includes(cleanPath);
   
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);

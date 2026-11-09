@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="mbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d2b52"/>
+      <stop offset="1" stop-color="#071426"/>
+    </linearGradient>
+    <radialGradient id="mglow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mnode" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#0056b3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#mbg)"/>
+
+  <!-- grid -->
+  <g stroke="#38bdf8" stroke-opacity="0.06" stroke-width="1">
+    <path d="M0 150H1200M0 300H1200M0 450H1200M0 600H1200M0 750H1200"/>
+    <path d="M150 0V900M300 0V900M450 0V900M600 0V900M750 0V900M900 0V900M1050 0V900"/>
+  </g>
+
+  <circle cx="600" cy="450" r="330" fill="url(#mglow)"/>
+
+  <!-- connection lines -->
+  <g stroke="#38bdf8" stroke-opacity="0.35" stroke-width="2">
+    <path d="M600 450 L300 250"/>
+    <path d="M600 450 L900 250"/>
+    <path d="M600 450 L250 550"/>
+    <path d="M600 450 L950 550"/>
+    <path d="M600 450 L600 180"/>
+    <path d="M600 450 L600 720"/>
+    <path d="M300 250 L900 250" stroke-opacity="0.2"/>
+    <path d="M250 550 L950 550" stroke-opacity="0.2"/>
+    <path d="M300 250 L250 550" stroke-opacity="0.2"/>
+    <path d="M900 250 L950 550" stroke-opacity="0.2"/>
+  </g>
+
+  <!-- nodes -->
+  <g>
+    <circle cx="600" cy="450" r="26" fill="url(#mnode)" stroke="#7dd3fc" stroke-width="3"/>
+    <circle cx="600" cy="450" r="10" fill="#e0f2fe"/>
+
+    <circle cx="300" cy="250" r="18" fill="#0b2a52" stroke="#7dd3fc" stroke-width="3"/>
+    <circle cx="300" cy="250" r="6" fill="#7dd3fc"/>
+    <circle cx="900" cy="250" r="18" fill="#0b2a52" stroke="#7dd3fc" stroke-width="3"/>
+    <circle cx="900" cy="250" r="6" fill="#7dd3fc"/>
+    <circle cx="250" cy="550" r="18" fill="#0b2a52" stroke="#7dd3fc" stroke-width="3"/>
+    <circle cx="250" cy="550" r="6" fill="#7dd3fc"/>
+    <circle cx="950" cy="550" r="18" fill="#0b2a52" stroke="#7dd3fc" stroke-width="3"/>
+    <circle cx="950" cy="550" r="6" fill="#7dd3fc"/>
+    <circle cx="600" cy="180" r="18" fill="#0b2a52" stroke="#7dd3fc" stroke-width="3"/>
+    <circle cx="600" cy="180" r="6" fill="#7dd3fc"/>
+    <circle cx="600" cy="720" r="18" fill="#0b2a52" stroke="#7dd3fc" stroke-width="3"/>
+    <circle cx="600" cy="720" r="6" fill="#7dd3fc"/>
+  </g>
+
+  <!-- orbiting dots -->
+  <g fill="#7dd3fc">
+    <circle cx="430" cy="160" r="3" opacity="0.7"/>
+    <circle cx="770" cy="120" r="2.5" opacity="0.5"/>
+    <circle cx="150" cy="350" r="3" opacity="0.6"/>
+    <circle cx="1050" cy="380" r="3" opacity="0.6"/>
+    <circle cx="480" cy="800" r="2.5" opacity="0.5"/>
+    <circle cx="820" cy="820" r="3" opacity="0.6"/>
+    <circle cx="80" cy="700" r="2.5" opacity="0.4"/>
+    <circle cx="1120" cy="700" r="2.5" opacity="0.4"/>
+  </g>
+
+  <!-- hex accents -->
+  <g fill="none" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="2">
+    <polygon points="150,120 190,145 190,195 150,220 110,195 110,145"/>
+    <polygon points="1050,680 1090,705 1090,755 1050,780 1010,755 1010,705"/>
+  </g>
+</svg>
