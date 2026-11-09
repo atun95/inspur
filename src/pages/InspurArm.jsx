@@ -14,7 +14,8 @@ import {
 
 const SafeImage = ({ src, alt, className }) => {
   const [error, setError] = useState(false);
-  if (error || !src) {
+  const normalizedSrc = src && src.startsWith('./') ? src.replace(/^\./, '') : src;
+  if (error || !normalizedSrc) {
     return (
       <div className={`${className} bg-slate-200 flex flex-col items-center justify-center gap-2 border border-slate-300`}>
         <ImageIcon className="text-slate-400 w-8 h-8" />
@@ -22,7 +23,7 @@ const SafeImage = ({ src, alt, className }) => {
       </div>
     );
   }
-  return <img src={src} alt={alt} className={className} onError={() => setError(true)} />;
+  return <img src={normalizedSrc} alt={alt} className={className} onError={() => setError(true)} />;
 };
 
 export const TRANSLATIONS = {
@@ -121,7 +122,7 @@ const App = () => {
     updateMeta('keywords', t.seo.keywords);
     updateMeta('og:title', t.seo.title, true);
     updateMeta('og:description', t.seo.desc, true);
-    updateMeta('og:image', `${window.location.origin}/images/monitor-arm.svg`, true);
+    updateMeta('og:image', `${window.location.origin}/images/inspur-arm.png`, true);
   }, [lang, t.seo]);
 
   if (loading) {
@@ -142,7 +143,7 @@ const App = () => {
       <section className="pt-32 pb-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="relative rounded-[2.5rem] overflow-hidden bg-slate-50 border border-slate-100 aspect-[4/3] flex items-center justify-center p-10">
-            <SafeImage src="./images/monitor-arm.svg" alt={t.detailTitle} className="w-full h-full object-contain" />
+            <SafeImage src="./images/inspur-arm.png" alt={t.detailTitle} className="w-full h-full object-contain" />
           </div>
           <div>
             <span className="inline-block px-4 py-1.5 bg-[#0056b3]/10 border border-[#0056b3]/30 text-[#0056b3] text-[10px] font-bold rounded-full uppercase tracking-[0.2em] mb-6">
