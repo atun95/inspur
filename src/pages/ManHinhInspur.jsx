@@ -60,7 +60,6 @@ export const PRODUCTS_DATA = {
       },
       img: "./images/IIP215AF-2.png",
       icon: "Monitor",
-      url: "/san-phamman-hinh-inspur/"
     },
     {
       id: 2,
@@ -85,9 +84,8 @@ export const PRODUCTS_DATA = {
           { "label": "Type", "value": "Monitor" }
         ]
       },
-      img: "./images/IIP245SF-3.png",
+      img: "./images/IIP245SF-4.png",
       icon: "Monitor",
-      url: "/san-phamman-hinh-inspur/"
     },
     {
       id: 3,
@@ -112,9 +110,8 @@ export const PRODUCTS_DATA = {
           { "label": "Type", "value": "Monitor" }
         ]
       },
-      img: "./images/IIP270AF-3.png",
+      img: "./images/IIP270AF-4.png",
       icon: "Monitor",
-      url: "/san-phamman-hinh-inspur/"
     },
     {
       id: 4,
@@ -141,7 +138,6 @@ export const PRODUCTS_DATA = {
       },
       img: "./images/IIP49SX.jpg",
       icon: "Monitor",
-      url: "/san-phamman-hinh-inspur/"
     },
     {
       id: 5,
@@ -166,9 +162,8 @@ export const PRODUCTS_DATA = {
           { "label": "Type", "value": "Monitor" }
         ]
       },
-      img: "./images/IIP270QT-6.png",
+      img: "./images/IIP270QT-7.png",
       icon: "Monitor",
-      url: "/san-phamman-hinh-inspur/"
     },
     {
       id: 6,
@@ -193,9 +188,8 @@ export const PRODUCTS_DATA = {
           { "label": "Type", "value": "Monitor" }
         ]
       },
-      img: "./images/IIP270QZ-6.png",
+      img: "./images/IIP270QZ-7.png",
       icon: "Monitor",
-      url: "/san-phamman-hinh-inspur/"
     }
   ]
 };
@@ -458,14 +452,9 @@ const App = () => {
                 return (
                   <div 
                     key={product.id}
-                    className="bg-white rounded-[2rem] border border-slate-100 hover:border-[#0056b3] hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-500 overflow-hidden flex flex-col group cursor-pointer"
-                    onClick={() => {
-                      if (product.url) {
-                        window.location.href = product.url;
-                      }
-                    }}
+                    className="bg-white rounded-[2rem] border border-slate-100 hover:border-[#0056b3] hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-500 overflow-hidden flex flex-col group"
                   >
-                    <div className="relative h-64 overflow-hidden bg-slate-100 flex items-center justify-center">
+                    <div className="relative h-64 overflow-hidden bg-slate-100 flex items-center justify-center p-4">
                       <SafeImage src={product.img} alt={prodData.title} className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
                       <div className="absolute top-4 left-4">
                         <span className="px-3 py-1 bg-white/90 backdrop-blur text-[#0056b3] text-[9px] font-black uppercase tracking-widest rounded-lg shadow-sm border border-white">
@@ -473,19 +462,13 @@ const App = () => {
                         </span>
                       </div>
                     </div>
-                    <div className="p-6 flex-1 flex flex-col">
-                      <div className="flex items-center gap-3 mb-4">
+                    <div className="p-6 flex-1 flex flex-col justify-center">
+                      <div className="flex items-center gap-3">
                         <div className="p-2 bg-blue-50 text-[#0056b3] rounded-lg group-hover:bg-[#0056b3] group-hover:text-white transition-colors">
                           <Icon className="w-5 h-5" />
                         </div>
                         <h3 className="text-xl font-black text-slate-900 tracking-tight">{prodData.title}</h3>
                       </div>
-                      {product.url && (
-                        <div className="flex items-center gap-2 text-[#0056b3] text-sm font-bold uppercase tracking-widest mt-4 pt-4 border-t border-slate-200">
-                          <span>{lang === 'vi' ? 'Xem chi tiết' : 'View Details'}</span>
-                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </div>
-                      )}
                     </div>
                   </div>
                 );
