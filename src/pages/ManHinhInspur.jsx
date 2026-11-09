@@ -58,8 +58,8 @@ export const PRODUCTS_DATA = {
           { "label": "Type", "value": "Monitor" }
         ]
       },
-      img: "./images/IIP215AF-2.png",
-      icon: "Monitor",
+      img: "./images/IIP215AF.png",
+      icon: "Monitor"
     },
     {
       id: 2,
@@ -84,8 +84,8 @@ export const PRODUCTS_DATA = {
           { "label": "Type", "value": "Monitor" }
         ]
       },
-      img: "./images/IIP245SF-4.png",
-      icon: "Monitor",
+      img: "./images/IIP245SF.png",
+      icon: "Monitor"
     },
     {
       id: 3,
@@ -110,37 +110,11 @@ export const PRODUCTS_DATA = {
           { "label": "Type", "value": "Monitor" }
         ]
       },
-      img: "./images/IIP270AF-4.png",
-      icon: "Monitor",
+      img: "./images/IIP270AF.png",
+      icon: "Monitor"
     },
     {
       id: 4,
-      category: "Monitor",
-      vi: {
-        title: "Inspur Monitor IIP49SX",
-        desc: "Màn hình siêu rộng 49 inch, trải nghiệm đa nhiệm tuyệt vời, phù hợp cho gaming và thiết kế.",
-        technicalSpecs: [
-          { "label": "Kích thước", "value": "49\"" },
-          { "label": "Model", "value": "IIP49SX" },
-          { "label": "Độ phân giải", "value": "Ultra Wide" },
-          { "label": "Loại", "value": "Màn hình" }
-        ]
-      },
-      en: {
-        title: "Inspur Monitor IIP49SX",
-        desc: "Ultra-wide 49-inch monitor, excellent multitasking experience, suitable for gaming and design.",
-        technicalSpecs: [
-          { "label": "Size", "value": "49\"" },
-          { "label": "Model", "value": "IIP49SX" },
-          { "label": "Resolution", "value": "Ultra Wide" },
-          { "label": "Type", "value": "Monitor" }
-        ]
-      },
-      img: "./images/IIP49SX.jpg",
-      icon: "Monitor",
-    },
-    {
-      id: 5,
       category: "Monitor",
       vi: {
         title: "Inspur Monitor IIP270QT",
@@ -162,11 +136,11 @@ export const PRODUCTS_DATA = {
           { "label": "Type", "value": "Monitor" }
         ]
       },
-      img: "./images/IIP270QT-7.png",
-      icon: "Monitor",
+      img: "./images/IIP270QT.png",
+      icon: "Monitor"
     },
     {
-      id: 6,
+      id: 5,
       category: "Monitor",
       vi: {
         title: "Inspur Monitor IIP270QZ",
@@ -188,8 +162,8 @@ export const PRODUCTS_DATA = {
           { "label": "Type", "value": "Monitor" }
         ]
       },
-      img: "./images/IIP270QZ-7.png",
-      icon: "Monitor",
+      img: "./images/IIP270QZ.png",
+      icon: "Monitor"
     }
   ]
 };
@@ -445,7 +419,7 @@ const App = () => {
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-12 text-center uppercase tracking-tight">
               {lang === 'vi' ? 'Các mẫu sản phẩm Màn hình' : 'Monitor Product Models'}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
               {products.map((product) => {
                 const prodData = product[lang];
                 const Icon = ICON_MAP[product.icon] || MonitorIcon;

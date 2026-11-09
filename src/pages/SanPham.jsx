@@ -72,7 +72,7 @@ export const TRANSLATIONS = {
         title: 'Inspur Monitor',
         desc: 'Màn hình chuyên nghiệp với độ phân giải cao, tần số quét nhanh và công nghệ hiển thị tiên tiến cho công việc chuyên nghiệp.',
         specs: ['Độ phân giải 4K/UHD', 'Tần số quét 144Hz', 'Công nghệ IPS/VA Panel'],
-        img: './images/IIP270QT-6.png',
+        img: './images/IIP270QT.png',
         icon: Monitor,
         url: '/man-hinh-inspur/'
       },
@@ -130,7 +130,7 @@ export const TRANSLATIONS = {
         title: 'Inspur Monitor',
         desc: 'Professional display with high resolution, fast refresh rate and advanced display technology for professional work.',
         specs: ['4K/UHD Resolution', '144Hz Refresh Rate', 'IPS/VA Panel Technology'],
-        img: './images/IIP270QT-6.png',
+        img: './images/IIP270QT.png',
         icon: Monitor,
         url: '/man-hinh-inspur/'
       },
